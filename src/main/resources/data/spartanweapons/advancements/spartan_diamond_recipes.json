@@ -1,0 +1,31 @@
+{
+    "parent": "minecraft:recipes/root",
+    "rewards": {
+        "recipes": [
+            "spartanweapons:diamond_cutlass",
+            "spartanweapons:diamond_dagger",
+            "spartanweapons:diamond_glaive",
+            "spartanweapons:diamond_greatsword",
+            "spartanweapons:diamond_halberd",
+            "spartanweapons:diamond_katana",
+            "spartanweapons:diamond_mace",
+            "spartanweapons:diamond_rapier",
+            "spartanweapons:diamond_scythe",
+            "spartanweapons:diamond_spear"
+        ]
+    },
+    "criteria": {
+        "spartan_diamond_recipes": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": [
+                            "minecraft:diamond"
+                        ]
+                    }
+                ]
+            }
+        }
+    }
+}

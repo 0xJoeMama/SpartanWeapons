@@ -1,0 +1,15 @@
+{
+    "replace": false,
+    "values": [
+        "spartanweapons:netherite_cutlass",
+        "spartanweapons:netherite_dagger",
+        "spartanweapons:netherite_glaive",
+        "spartanweapons:netherite_greatsword",
+        "spartanweapons:netherite_halberd",
+        "spartanweapons:netherite_katana",
+        "spartanweapons:netherite_mace",
+        "spartanweapons:netherite_rapier",
+        "spartanweapons:netherite_scythe",
+        "spartanweapons:netherite_spear"
+    ]
+}
