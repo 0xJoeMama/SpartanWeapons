@@ -11,8 +11,8 @@ import net.minecraft.recipe.RecipeManager;
 import net.minecraft.resource.ResourceManager;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.profiler.Profiler;
-import net.spartanweapons.init.ItemInit;
 import net.spartanweapons.init.RecipeInit;
+import net.spartanweapons.init.TagInit;
 
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -20,8 +20,6 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Iterator;
 import java.util.Map;
 
@@ -30,24 +28,23 @@ import java.util.Map;
 public class RecipeManagerMixin {
 
     private static final ItemStack STICK = new ItemStack(Items.STICK);
-    private static final ArrayList<ItemStack> OTHER_STICKS = new ArrayList<ItemStack>(Arrays.asList(new ItemStack(ItemInit.ACACIA_STICK), new ItemStack(ItemInit.BAMBOO_STICK),
-            new ItemStack(ItemInit.BIRCH_STICK), new ItemStack(ItemInit.CHERRY_STICK), new ItemStack(ItemInit.CRIMSON_STICK), new ItemStack(ItemInit.DARK_OAK_STICK),
-            new ItemStack(ItemInit.JUNGLE_STICK), new ItemStack(ItemInit.MANGROVE_STICK), new ItemStack(ItemInit.SPRUCE_STICK), new ItemStack(ItemInit.WARPED_STICK)));
 
     @Inject(method = "apply", at = @At(value = "INVOKE_ASSIGN", target = "Lnet/minecraft/recipe/RecipeManager;deserialize(Lnet/minecraft/util/Identifier;Lcom/google/gson/JsonObject;)Lnet/minecraft/recipe/Recipe;"), locals = LocalCapture.CAPTURE_FAILSOFT)
     private void applyMixin(Map<Identifier, JsonElement> map, ResourceManager resourceManager, Profiler profiler, CallbackInfo info, Map map2, ImmutableMap.Builder builder, Iterator var6,
             Map.Entry entry, Identifier identifier, Recipe<?> recipe) {
-        for (int i = 0; i < recipe.getIngredients().size(); i++) {
 
-            if (recipe.getId().toString().equals("minecraft:stick")) {
-                continue;
-            }
-            if (recipe.getIngredients().get(i).test(STICK)) {
-                ItemStack[] matchingStacks = recipe.getIngredients().get(i).getMatchingStacks();
-                ArrayList<ItemStack> sticks = new ArrayList<ItemStack>();
-                sticks.addAll(Arrays.asList(matchingStacks));
-                sticks.addAll(OTHER_STICKS);
-                recipe.getIngredients().set(i, Ingredient.ofStacks(sticks.stream()));
+        if (!recipe.getId().toString().equals("minecraft:stick")) {
+            if (!recipe.getId().getNamespace().equals("spartanweapons") || !recipe.getId().getPath().contains("pole")) {
+                for (int i = 0; i < recipe.getIngredients().size(); i++) {
+                    if (recipe.getIngredients().get(i).test(STICK)) {
+                        // ItemStack[] matchingStacks = recipe.getIngredients().get(i).getMatchingStacks();
+                        // ArrayList<ItemStack> sticks = new ArrayList<ItemStack>();
+                        // sticks.addAll(Arrays.asList(matchingStacks));
+                        // sticks.addAll(OTHER_STICKS);
+                        // recipe.getIngredients().set(i, Ingredient.ofStacks(sticks.stream()));
+                        recipe.getIngredients().set(i, Ingredient.fromTag(TagInit.STICKS));
+                    }
+                }
             }
         }
     }

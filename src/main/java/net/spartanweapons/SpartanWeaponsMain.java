@@ -5,6 +5,7 @@ import net.minecraft.util.Identifier;
 import net.spartanweapons.init.ConfigInit;
 import net.spartanweapons.init.ItemInit;
 import net.spartanweapons.init.RecipeInit;
+import net.spartanweapons.init.TagInit;
 
 public class SpartanWeaponsMain implements ModInitializer {
 
@@ -17,6 +18,7 @@ public class SpartanWeaponsMain implements ModInitializer {
         ConfigInit.init();
         ItemInit.init();
         RecipeInit.init();
+        TagInit.init();
     }
 
 }
