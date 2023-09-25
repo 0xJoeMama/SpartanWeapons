@@ -8,4 +8,4 @@ SpartanWeapons is a mod built for the [Fabric Loader](https://fabricmc.net/). It
 
 ### License
 
-SpartanWeapons is licensed under MIT.
+SpartanWeapons is licensed under GPLv3.
