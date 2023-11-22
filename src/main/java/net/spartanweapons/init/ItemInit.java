@@ -28,7 +28,7 @@ public class ItemInit {
             Arrays.asList("acacia", "bamboo", "birch", "cherry", "crimson", "dark_oak", "jungle", "mangrove", "oak", "spruce", "warped"));
     public static final ArrayList<String> MATERIALS = new ArrayList<String>(Arrays.asList("wooden", "stone", "iron", "golden", "diamond", "netherite"));
     public static final ArrayList<String> ITEM_STRINGS = new ArrayList<String>(
-            Arrays.asList("cutlass", "dagger", "glaive", "greatsword", "halberd", "katana", "mace", "rapier", "scythe", "spear", "club", "spear", "staff", "battle_axe", "stick", "pole"));
+            Arrays.asList("cutlass", "dagger", "glaive", "greatsword", "halberd", "katana", "mace", "rapier", "scythe", "spear", "club", "spear", "staff", "battle_axe", "kunai", "stick", "pole"));
 
     // public static final ArrayList<String> STICKS = new ArrayList<String>(
     // Arrays.asList("acacia_stick", "bamboo_stick", "birch_stick", "cherry_stick", "crimson_stick", "dark_oak_stick", "jungle_stick", "mangrove_stick", "spruce_stick", "warped_stick"));
@@ -155,12 +155,16 @@ public class ItemInit {
     public static final Item NETHERITE_SPEAR = register("netherite_spear", new Spear(ToolMaterials.NETHERITE, 5, -2.8F, new Item.Settings().fireproof()));
 
     // Battle Axe
-    // public static final Item WOODEN_BATTLE_AXE = register("wooden_battle_axe", new BattleAxe(ToolMaterials.WOOD, 4, -2.5F, new Item.Settings()));
-    // public static final Item STONE_BATTLE_AXE = register("stone_battle_axe", new BattleAxe(ToolMaterials.STONE, 4, -2.5F, new Item.Settings()));
     public static final Item IRON_BATTLE_AXE = register("iron_battle_axe", new BattleAxe(ToolMaterials.IRON, 4, -2.5F, new Item.Settings()));
     public static final Item GOLDEN_BATTLE_AXE = register("golden_battle_axe", new BattleAxe(ToolMaterials.GOLD, 4, -2.5F, new Item.Settings()));
     public static final Item DIAMOND_BATTLE_AXE = register("diamond_battle_axe", new BattleAxe(ToolMaterials.DIAMOND, 4, -2.5F, new Item.Settings()));
     public static final Item NETHERITE_BATTLE_AXE = register("netherite_battle_axe", new BattleAxe(ToolMaterials.NETHERITE, 4, -2.5F, new Item.Settings().fireproof()));
+
+    // Kunai
+    public static final Item IRON_KUNAI = register("iron_kunai", new BattleAxe(ToolMaterials.IRON, 0, -1.8F, new Item.Settings()));
+    public static final Item GOLDEN_KUNAI = register("golden_kunai", new BattleAxe(ToolMaterials.GOLD, 0, -1.8F, new Item.Settings()));
+    public static final Item DIAMOND_KUNAI = register("diamond_kunai", new BattleAxe(ToolMaterials.DIAMOND, 0, -1.8F, new Item.Settings()));
+    public static final Item NETHERITE_KUNAI = register("netherite_kunai", new BattleAxe(ToolMaterials.NETHERITE, 0, -1.8F, new Item.Settings().fireproof()));
 
     // Staff
     public static final Item ACACIA_STAFF = register("acacia_staff", new Stave(ToolMaterials.WOOD, 5, -2.9F, new Item.Settings()));

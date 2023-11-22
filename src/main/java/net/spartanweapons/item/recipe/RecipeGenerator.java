@@ -90,6 +90,10 @@ public class RecipeGenerator {
             jsonArray.add("dfd");
             jsonArray.add(" e ");
             break;
+        case "kunai":
+            jsonArray.add("fd");
+            jsonArray.add("e ");
+            break;
         }
 
         json.add("pattern", jsonArray);

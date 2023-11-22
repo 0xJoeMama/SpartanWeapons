@@ -11,6 +11,8 @@
         "spartanweapons:iron_rapier",
         "spartanweapons:iron_scythe",
         "spartanweapons:iron_spear",
+        "spartanweapons:iron_battle_axe",
+        "spartanweapons:iron_kunai",
         "spartanweapons:golden_cutlass",
         "spartanweapons:golden_dagger",
         "spartanweapons:golden_glaive",
@@ -20,6 +22,8 @@
         "spartanweapons:golden_mace",
         "spartanweapons:golden_rapier",
         "spartanweapons:golden_scythe",
-        "spartanweapons:golden_spear"
+        "spartanweapons:golden_spear",
+        "spartanweapons:golden_battle_axe",
+        "spartanweapons:golden_kunai"
     ]
 }

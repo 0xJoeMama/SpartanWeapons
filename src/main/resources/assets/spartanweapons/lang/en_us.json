@@ -123,5 +123,12 @@
     "item.spartanweapons.iron_battle_axe": "Iron Battle Axe",
     "item.spartanweapons.netherite_battle_axe": "Netherite Battle Axe",
     "item.spartanweapons.stone_battle_axe": "Stone Battle Axe",
-    "item.spartanweapons.wooden_battle_axe": "Wooden Battle Axe"
+    "item.spartanweapons.wooden_battle_axe": "Wooden Battle Axe",
+
+    "item.spartanweapons.diamond_kunai": "Diamond Kunai",
+    "item.spartanweapons.golden_kunai": "Golden Kunai",
+    "item.spartanweapons.iron_kunai": "Iron Kunai",
+    "item.spartanweapons.netherite_kunai": "Netherite Kunai",
+    "item.spartanweapons.stone_kunai": "Stone Kunai",
+    "item.spartanweapons.wooden_kunai": "Wooden Kunai"
 }
