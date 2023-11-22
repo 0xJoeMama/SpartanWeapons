@@ -1,0 +1,7 @@
+{
+    "parent": "bettercombat:dagger",
+    "attributes": {
+        "pose": "spartanweapons:pose_dual_handed_backwards_daggers",
+        "two_handed": false
+    }
+}

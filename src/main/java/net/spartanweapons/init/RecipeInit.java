@@ -142,6 +142,8 @@ public class RecipeInit {
                 SpartanWeaponsMain.ID("golden_battle_axe"), "battle_axe"));
         SHAPED_RECIPES.put("golden_kunai", new ShapedRecipeMaterial(Registries.ITEM.getId(Items.GOLD_INGOT), new Identifier("c", "sticks"), Registries.ITEM.getId(Items.SLIME_BALL), "item", "tag",
                 "item", SpartanWeaponsMain.ID("golden_kunai"), "kunai"));
+        SHAPED_RECIPES.put("golden_javelin", new ShapedRecipeMaterial(Registries.ITEM.getId(Items.GOLD_INGOT), new Identifier("c", "poles"), Registries.ITEM.getId(Items.SLIME_BALL), "item", "tag",
+                "item", SpartanWeaponsMain.ID("golden_javelin"), "javelin"));
 
         // Iron
         SHAPED_RECIPES.put("iron_cutlass",
@@ -168,6 +170,8 @@ public class RecipeInit {
                 SpartanWeaponsMain.ID("iron_battle_axe"), "battle_axe"));
         SHAPED_RECIPES.put("iron_kunai", new ShapedRecipeMaterial(Registries.ITEM.getId(Items.IRON_INGOT), new Identifier("c", "sticks"), Registries.ITEM.getId(Items.SLIME_BALL), "item", "tag",
                 "item", SpartanWeaponsMain.ID("iron_kunai"), "kunai"));
+        SHAPED_RECIPES.put("iron_javelin", new ShapedRecipeMaterial(Registries.ITEM.getId(Items.IRON_INGOT), new Identifier("c", "poles"), Registries.ITEM.getId(Items.SLIME_BALL), "item", "tag",
+                "item", SpartanWeaponsMain.ID("iron_javelin"), "javelin"));
 
         // Diamond
         SHAPED_RECIPES.put("diamond_cutlass",
@@ -194,6 +198,9 @@ public class RecipeInit {
                 SpartanWeaponsMain.ID("diamond_battle_axe"), "battle_axe"));
         SHAPED_RECIPES.put("diamond_kunai", new ShapedRecipeMaterial(Registries.ITEM.getId(Items.DIAMOND), new Identifier("c", "sticks"), Registries.ITEM.getId(Items.SLIME_BALL), "item", "tag",
                 "item", SpartanWeaponsMain.ID("diamond_kunai"), "kunai"));
+        SHAPED_RECIPES.put("diamond_javelin", new ShapedRecipeMaterial(Registries.ITEM.getId(Items.DIAMOND), new Identifier("c", "poles"), Registries.ITEM.getId(Items.SLIME_BALL), "item", "tag",
+                "item", SpartanWeaponsMain.ID("diamond_javelin"), "javelin"));
+
         // Netherite
         SMITHING_RECIPES.put("netherite_cutlass", new SmithingRecipeMaterial(SpartanWeaponsMain.ID("diamond_cutlass"), Registries.ITEM.getId(Items.NETHERITE_INGOT), "item", "item",
                 SpartanWeaponsMain.ID("netherite_cutlass"), new Identifier("minecraft:netherite_upgrade_smithing_template")));
@@ -219,6 +226,8 @@ public class RecipeInit {
                 SpartanWeaponsMain.ID("netherite_battle_axe"), new Identifier("minecraft:netherite_upgrade_smithing_template")));
         SMITHING_RECIPES.put("netherite_kunai", new SmithingRecipeMaterial(SpartanWeaponsMain.ID("diamond_kunai"), Registries.ITEM.getId(Items.NETHERITE_INGOT), "item", "item",
                 SpartanWeaponsMain.ID("netherite_kunai"), new Identifier("minecraft:netherite_upgrade_smithing_template")));
+        SMITHING_RECIPES.put("netherite_javelin", new SmithingRecipeMaterial(SpartanWeaponsMain.ID("diamond_javelin"), Registries.ITEM.getId(Items.NETHERITE_INGOT), "item", "item",
+                SpartanWeaponsMain.ID("netherite_javelin"), new Identifier("minecraft:netherite_upgrade_smithing_template")));
     }
 
     public static void init() {

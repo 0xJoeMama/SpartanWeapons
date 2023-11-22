@@ -130,5 +130,12 @@
     "item.spartanweapons.iron_kunai": "Iron Kunai",
     "item.spartanweapons.netherite_kunai": "Netherite Kunai",
     "item.spartanweapons.stone_kunai": "Stone Kunai",
-    "item.spartanweapons.wooden_kunai": "Wooden Kunai"
+    "item.spartanweapons.wooden_kunai": "Wooden Kunai",
+
+    "item.spartanweapons.diamond_javelin": "Diamond Javelin",
+    "item.spartanweapons.golden_javelin": "Golden Javelin",
+    "item.spartanweapons.iron_javelin": "Iron Javelin",
+    "item.spartanweapons.netherite_javelin": "Netherite Javelin",
+    "item.spartanweapons.stone_javelin": "Stone Javelin",
+    "item.spartanweapons.wooden_javelin": "Wooden Javelin"
 }

@@ -212,6 +212,14 @@ public class ModelInit {
                             .setFirstperson_righthand(JModel.position().rotation(-25f, -90f, 0f).translation(1.13f, 0.7f, 1.13f).scale(0.68f, 0.68f, 0.68f))
                             .setFirstperson_lefthand(JModel.position().rotation(-25f, 90f, 0f).translation(1.13f, 0.7f, 1.13f).scale(0.68f, 0.68f, 0.68f)));
 
+        case "javelin":
+            return JModel.model().parent("item/handheld").textures(JModel.textures().layer0("spartanweapons:item/javelins/" + material + "_" + item))
+                    .display(JModel.display().setThirdperson_righthand(JModel.position().rotation(-55f, -90f, 0f).translation(0f, 0f, 1.25f).scale(1.7f, 1.7f, 0.85f))
+                            .setThirdperson_lefthand(JModel.position().rotation(-55f, 90f, 0f).translation(0f, 0f, 1.25f).scale(1.7f, 1.7f, 0.85f))
+                            .setFirstperson_righthand(JModel.position().rotation(-25f, -90f, 0f).translation(1.13f, 0.2f, 1.13f).scale(1.36f, 1.36f, 0.68f))
+                            .setFirstperson_lefthand(JModel.position().rotation(-25f, 90f, 0f).translation(1.13f, 0.2f, 1.13f).scale(1.36f, 1.36f, 0.68f))
+                            .setGround(JModel.position().scale(1f, 1f, 0.5f)).setGui(JModel.position().scale(1.15f, 1.15f, 1f)).setFixed(JModel.position().scale(2f, 2f, 1f)));
+
         default:
             throw new IllegalStateException("Could not find JModel of item " + item);
         }

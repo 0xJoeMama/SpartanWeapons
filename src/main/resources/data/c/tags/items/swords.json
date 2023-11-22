@@ -13,6 +13,7 @@
         "spartanweapons:diamond_spear",
         "spartanweapons:diamond_battle_axe",
         "spartanweapons:diamond_kunai",
+        "spartanweapons:diamond_javelin",
         "spartanweapons:golden_cutlass",
         "spartanweapons:golden_dagger",
         "spartanweapons:golden_glaive",
@@ -25,6 +26,7 @@
         "spartanweapons:golden_spear",
         "spartanweapons:golden_battle_axe",
         "spartanweapons:golden_kunai",
+        "spartanweapons:golden_javelin",
         "spartanweapons:iron_cutlass",
         "spartanweapons:iron_dagger",
         "spartanweapons:iron_glaive",
@@ -37,6 +39,7 @@
         "spartanweapons:iron_spear",
         "spartanweapons:iron_battle_axe",
         "spartanweapons:iron_kunai",
+        "spartanweapons:iron_javelin",
         "spartanweapons:netherite_cutlass",
         "spartanweapons:netherite_dagger",
         "spartanweapons:netherite_glaive",
@@ -48,6 +51,7 @@
         "spartanweapons:netherite_scythe",
         "spartanweapons:netherite_spear",
         "spartanweapons:netherite_battle_axe",
-        "spartanweapons:netherite_kunai"
+        "spartanweapons:netherite_kunai",
+        "spartanweapons:netherite_javelin"
     ]
 }

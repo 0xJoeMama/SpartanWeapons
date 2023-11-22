@@ -94,6 +94,11 @@ public class RecipeGenerator {
             jsonArray.add("fd");
             jsonArray.add("e ");
             break;
+        case "javelin":
+            jsonArray.add("d");
+            jsonArray.add("f");
+            jsonArray.add("e");
+            break;
         }
 
         json.add("pattern", jsonArray);
