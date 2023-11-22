@@ -161,10 +161,10 @@ public class ItemInit {
     public static final Item NETHERITE_BATTLE_AXE = register("netherite_battle_axe", new BattleAxe(ToolMaterials.NETHERITE, 4, -2.5F, new Item.Settings().fireproof()));
 
     // Javelin
-    public static final Item IRON_JAVELIN = register("iron_javelin", new Javelin(ToolMaterials.IRON, 2, -2.4F, new Item.Settings()));
-    public static final Item GOLDEN_JAVELIN = register("golden_javelin", new Javelin(ToolMaterials.GOLD, 2, -2.4F, new Item.Settings()));
-    public static final Item DIAMOND_JAVELIN = register("diamond_javelin", new Javelin(ToolMaterials.DIAMOND, 2, -2.4F, new Item.Settings()));
-    public static final Item NETHERITE_JAVELIN = register("netherite_javelin", new Javelin(ToolMaterials.NETHERITE, 2, -2.4F, new Item.Settings().fireproof()));
+    public static final Item IRON_JAVELIN = register("iron_javelin", new Javelin(ToolMaterials.IRON, 2, -2.4F, () -> EntityInit.IRON_JAVELIN, new Item.Settings()));
+    public static final Item GOLDEN_JAVELIN = register("golden_javelin", new Javelin(ToolMaterials.GOLD, 2, -2.4F, () -> EntityInit.GOLDEN_JAVELIN, new Item.Settings()));
+    public static final Item DIAMOND_JAVELIN = register("diamond_javelin", new Javelin(ToolMaterials.DIAMOND, 2, -2.4F, () -> EntityInit.DIAMOND_JAVELIN, new Item.Settings()));
+    public static final Item NETHERITE_JAVELIN = register("netherite_javelin", new Javelin(ToolMaterials.NETHERITE, 2, -2.4F, () -> EntityInit.NETHERITE_JAVELIN, new Item.Settings().fireproof()));
 
     // Kunai
     public static final Item IRON_KUNAI = register("iron_kunai", new Kunai(ToolMaterials.IRON, 0, -1.8F, new Item.Settings()));

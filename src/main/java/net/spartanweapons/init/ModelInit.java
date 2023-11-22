@@ -1,6 +1,7 @@
 package net.spartanweapons.init;
 
 import java.util.Iterator;
+import java.util.List;
 
 import org.jetbrains.annotations.Nullable;
 
@@ -9,11 +10,14 @@ import net.devtech.arrp.api.RuntimeResourcePack;
 import net.devtech.arrp.json.models.JModel;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
+import net.minecraft.client.item.ModelPredicateProviderRegistry;
+import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
 
 @Environment(EnvType.CLIENT)
 public class ModelInit {
 
+    private static final List<Item> THROWING_ITEMS = List.of(ItemInit.IRON_JAVELIN, ItemInit.GOLDEN_JAVELIN, ItemInit.DIAMOND_JAVELIN, ItemInit.NETHERITE_JAVELIN);
     public static RuntimeResourcePack ARRP_RESOURCE_PACK;
 
     public static void init() {
@@ -40,6 +44,16 @@ public class ModelInit {
 
             for (int i = 0; i < ItemInit.MATERIALS.size(); i++) {
                 ARRP_RESOURCE_PACK.addModel(getJModel(item, ItemInit.MATERIALS.get(i)), new Identifier("spartanweapons", "item/" + ItemInit.MATERIALS.get(i) + "_" + item));
+                if (item.equals("javelin")) {
+                    ARRP_RESOURCE_PACK.addModel(
+                            JModel.model().parent("item/handheld").textures(JModel.textures().layer0("spartanweapons:item/javelins/" + ItemInit.MATERIALS.get(i) + "_" + item))
+                                    .display(JModel.display().setThirdperson_righthand(JModel.position().rotation(0f, -90f, -140f).translation(0f, 0f, 1.25f).scale(1.7f, 1.7f, 0.85f))
+                                            .setThirdperson_lefthand(JModel.position().rotation(0f, -90f, 130f).translation(0f, -5.75f, 1.25f).scale(1.7f, 1.7f, 0.85f))
+                                            .setFirstperson_righthand(JModel.position().rotation(-40f, -90f, 25f).translation(8.5f, 6.5f, -5f).scale(1.34f, 1.34f, 0.68f))
+                                            .setFirstperson_lefthand(JModel.position().rotation(-40f, 90f, -25f).translation(8.5f, 6.5f, -5f).scale(1.34f, 1.34f, 0.68f))),
+                            new Identifier("spartanweapons", "item/" + ItemInit.MATERIALS.get(i) + "_" + item + "_throwing"));
+                }
+
                 // Check for gui item models
                 // if (item.equals("big_axe") || item.equals("healing_staff") || item.equals("javelin") || item.equals("lance") || item.equals("long_sword") || item.equals("mace")
                 // || item.equals("rapier") || item.equals("sickle") || item.equals("small_axe")) {
@@ -74,6 +88,12 @@ public class ModelInit {
         // new Identifier("spartanweapons", "item/acacia_cutlass"));
 
         RRPCallback.BEFORE_VANILLA.register(a -> a.add(ARRP_RESOURCE_PACK));
+
+        for (int i = 0; i < THROWING_ITEMS.size(); i++) {
+            ModelPredicateProviderRegistry.register(THROWING_ITEMS.get(i), new Identifier("spartanweapons", "throwing"), (stack, world, entity, seed) -> {
+                return entity != null && entity.isUsingItem() && entity.getActiveItem() == stack ? 1.0f : 0.0f;
+            });
+        }
     }
 
     // ARRP
@@ -214,6 +234,7 @@ public class ModelInit {
 
         case "javelin":
             return JModel.model().parent("item/handheld").textures(JModel.textures().layer0("spartanweapons:item/javelins/" + material + "_" + item))
+                    .addOverride(JModel.override(JModel.condition().parameter("spartanweapons:throwing", 1.0f), new Identifier("spartanweapons:item/" + material + "_" + item + "_throwing")))
                     .display(JModel.display().setThirdperson_righthand(JModel.position().rotation(-55f, -90f, 0f).translation(0f, 0f, 1.25f).scale(1.7f, 1.7f, 0.85f))
                             .setThirdperson_lefthand(JModel.position().rotation(-55f, 90f, 0f).translation(0f, 0f, 1.25f).scale(1.7f, 1.7f, 0.85f))
                             .setFirstperson_righthand(JModel.position().rotation(-25f, -90f, 0f).translation(1.13f, 0.2f, 1.13f).scale(1.36f, 1.36f, 0.68f))
