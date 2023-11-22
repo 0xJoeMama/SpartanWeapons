@@ -138,6 +138,8 @@ public class RecipeInit {
                 SpartanWeaponsMain.ID("golden_scythe"), "scythe"));
         SHAPED_RECIPES.put("golden_spear",
                 new ShapedRecipeMaterial(Registries.ITEM.getId(Items.GOLD_INGOT), new Identifier("c", "poles"), null, "item", "tag", "", SpartanWeaponsMain.ID("golden_spear"), "spear"));
+        SHAPED_RECIPES.put("golden_battle_axe", new ShapedRecipeMaterial(Registries.ITEM.getId(Items.GOLD_INGOT), new Identifier("c", "sticks"), new Identifier("c", "poles"), "item", "tag", "tag",
+                SpartanWeaponsMain.ID("golden_battle_axe"), "battle_axe"));
 
         // Iron
         SHAPED_RECIPES.put("iron_cutlass",
@@ -160,6 +162,8 @@ public class RecipeInit {
                 SpartanWeaponsMain.ID("iron_scythe"), "scythe"));
         SHAPED_RECIPES.put("iron_spear",
                 new ShapedRecipeMaterial(Registries.ITEM.getId(Items.IRON_INGOT), new Identifier("c", "poles"), null, "item", "tag", "", SpartanWeaponsMain.ID("iron_spear"), "spear"));
+        SHAPED_RECIPES.put("iron_battle_axe", new ShapedRecipeMaterial(Registries.ITEM.getId(Items.IRON_INGOT), new Identifier("c", "sticks"), new Identifier("c", "poles"), "item", "tag", "tag",
+                SpartanWeaponsMain.ID("iron_battle_axe"), "battle_axe"));
 
         // Diamond
         SHAPED_RECIPES.put("diamond_cutlass",
@@ -182,6 +186,8 @@ public class RecipeInit {
                 SpartanWeaponsMain.ID("diamond_scythe"), "scythe"));
         SHAPED_RECIPES.put("diamond_spear",
                 new ShapedRecipeMaterial(Registries.ITEM.getId(Items.DIAMOND), new Identifier("c", "poles"), null, "item", "tag", "", SpartanWeaponsMain.ID("diamond_spear"), "spear"));
+        SHAPED_RECIPES.put("diamond_battle_axe", new ShapedRecipeMaterial(Registries.ITEM.getId(Items.DIAMOND), new Identifier("c", "sticks"), new Identifier("c", "poles"), "item", "tag", "tag",
+                SpartanWeaponsMain.ID("diamond_battle_axe"), "battle_axe"));
         // Netherite
         SMITHING_RECIPES.put("netherite_cutlass", new SmithingRecipeMaterial(SpartanWeaponsMain.ID("diamond_cutlass"), Registries.ITEM.getId(Items.NETHERITE_INGOT), "item", "item",
                 SpartanWeaponsMain.ID("netherite_cutlass"), new Identifier("minecraft:netherite_upgrade_smithing_template")));
@@ -203,6 +209,8 @@ public class RecipeInit {
                 SpartanWeaponsMain.ID("netherite_scythe"), new Identifier("minecraft:netherite_upgrade_smithing_template")));
         SMITHING_RECIPES.put("netherite_spear", new SmithingRecipeMaterial(SpartanWeaponsMain.ID("diamond_spear"), Registries.ITEM.getId(Items.NETHERITE_INGOT), "item", "item",
                 SpartanWeaponsMain.ID("netherite_spear"), new Identifier("minecraft:netherite_upgrade_smithing_template")));
+        SMITHING_RECIPES.put("netherite_battle_axe", new SmithingRecipeMaterial(SpartanWeaponsMain.ID("diamond_battle_axe"), Registries.ITEM.getId(Items.NETHERITE_INGOT), "item", "item",
+                SpartanWeaponsMain.ID("netherite_battle_axe"), new Identifier("minecraft:netherite_upgrade_smithing_template")));
     }
 
     public static void init() {

@@ -116,5 +116,12 @@
     "item.spartanweapons.iron_spear": "Iron Spear",
     "item.spartanweapons.netherite_spear": "Netherite Spear",
     "item.spartanweapons.stone_spear": "Stone Spear",
-    "item.spartanweapons.wooden_spear": "Wooden Spear"
+    "item.spartanweapons.wooden_spear": "Wooden Spear",
+
+    "item.spartanweapons.diamond_battle_axe": "Diamond Battle Axe",
+    "item.spartanweapons.golden_battle_axe": "Golden Battle Axe",
+    "item.spartanweapons.iron_battle_axe": "Iron Battle Axe",
+    "item.spartanweapons.netherite_battle_axe": "Netherite Battle Axe",
+    "item.spartanweapons.stone_battle_axe": "Stone Battle Axe",
+    "item.spartanweapons.wooden_battle_axe": "Wooden Battle Axe"
 }

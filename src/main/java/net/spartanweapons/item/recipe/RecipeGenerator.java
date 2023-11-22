@@ -85,6 +85,11 @@ public class RecipeGenerator {
             jsonArray.add("d");
             jsonArray.add("e");
             break;
+        case "battle_axe":
+            jsonArray.add("ddd");
+            jsonArray.add("dfd");
+            jsonArray.add(" e ");
+            break;
         }
 
         json.add("pattern", jsonArray);
