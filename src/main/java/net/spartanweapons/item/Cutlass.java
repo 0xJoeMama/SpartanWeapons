@@ -5,8 +5,8 @@ import net.minecraft.item.ToolMaterial;
 
 public class Cutlass extends SwordItem implements WoodTypeItem {
 
-    public Cutlass(ToolMaterial toolMaterial, int attackDamage, float attackSpeed, Settings settings) {
-        super(toolMaterial, attackDamage, attackSpeed, settings);
+    public Cutlass(ToolMaterial toolMaterial, Settings settings) {
+        super(toolMaterial, settings);
     }
 
 }

@@ -25,14 +25,14 @@ import net.spartanweapons.util.WoodHelper;
 @Mixin(CraftingScreenHandler.class)
 public class CraftingScreenHandlerMixin {
 
-    @Inject(method = "updateResult", at = @At(value = "INVOKE", target = "Lnet/minecraft/item/ItemStack;isItemEnabled(Lnet/minecraft/resource/featuretoggle/FeatureSet;)Z"), locals = LocalCapture.CAPTURE_FAILSOFT)
-    private static void updateResultMixin(ScreenHandler handler, World world, PlayerEntity player, RecipeInputInventory craftingInventory, CraftingResultInventory resultInventory, CallbackInfo info,
-            ServerPlayerEntity serverPlayerEntity, ItemStack itemStack, Optional optional, CraftingRecipe craftingRecipe, ItemStack itemStack2) {
-        if (itemStack2.getNbt() != null && itemStack2.getItem() instanceof WoodTypeItem) {
-            NbtCompound nbtCompound = itemStack2.getNbt().copy();
-            nbtCompound.putInt("WoodType", WoodHelper.getWoodType(craftingInventory.getInputStacks()));
-            itemStack2.setNbt(nbtCompound);
-            // System.out.println("TEST " + itemStack2 + " : " + itemStack2.getNbt());
-        }
-    }
+    // @Inject(method = "updateResult", at = @At(value = "INVOKE", target = "Lnet/minecraft/item/ItemStack;isItemEnabled(Lnet/minecraft/resource/featuretoggle/FeatureSet;)Z"), locals = LocalCapture.CAPTURE_FAILSOFT)
+    // private static void updateResultMixin(ScreenHandler handler, World world, PlayerEntity player, RecipeInputInventory craftingInventory, CraftingResultInventory resultInventory, CallbackInfo info,
+    //         ServerPlayerEntity serverPlayerEntity, ItemStack itemStack, Optional optional, CraftingRecipe craftingRecipe, ItemStack itemStack2) {
+    //     if (itemStack2.getNbt() != null && itemStack2.getItem() instanceof WoodTypeItem) {
+    //         NbtCompound nbtCompound = itemStack2.getNbt().copy();
+    //         nbtCompound.putInt("WoodType", WoodHelper.getWoodType(craftingInventory.getInputStacks()));
+    //         itemStack2.setNbt(nbtCompound);
+    //         // System.out.println("TEST " + itemStack2 + " : " + itemStack2.getNbt());
+    //     }
+    // }
 }

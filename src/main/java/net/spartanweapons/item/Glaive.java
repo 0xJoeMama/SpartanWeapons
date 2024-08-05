@@ -5,8 +5,8 @@ import net.minecraft.item.ToolMaterial;
 
 public class Glaive extends SwordItem implements WoodTypeItem {
 
-    public Glaive(ToolMaterial toolMaterial, int attackDamage, float attackSpeed, Settings settings) {
-        super(toolMaterial, attackDamage, attackSpeed, settings);
+    public Glaive(ToolMaterial toolMaterial, Settings settings) {
+        super(toolMaterial, settings);
     }
 
 }

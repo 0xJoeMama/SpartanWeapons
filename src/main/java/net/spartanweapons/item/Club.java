@@ -5,8 +5,8 @@ import net.minecraft.item.ToolMaterial;
 
 public class Club extends SwordItem {
 
-    public Club(ToolMaterial toolMaterial, int attackDamage, float attackSpeed, Settings settings) {
-        super(toolMaterial, attackDamage, attackSpeed, settings);
+    public Club(ToolMaterial toolMaterial, Settings settings) {
+        super(toolMaterial, settings);
     }
 
 }

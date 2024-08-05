@@ -8,8 +8,8 @@ import net.minecraft.util.Identifier;
 public class TagInit {
 
     // Item
-    public static final TagKey<Item> STICKS = TagKey.of(RegistryKeys.ITEM, new Identifier("c", "sticks"));
-    public static final TagKey<Item> POLES = TagKey.of(RegistryKeys.ITEM, new Identifier("c", "poles"));
+    public static final TagKey<Item> STICKS = TagKey.of(RegistryKeys.ITEM, Identifier.of("c", "sticks"));
+    public static final TagKey<Item> POLES = TagKey.of(RegistryKeys.ITEM, Identifier.of("c", "poles"));
 
     public static void init() {
     }

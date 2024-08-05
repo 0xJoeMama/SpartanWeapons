@@ -11,7 +11,7 @@ import net.spartanweapons.init.TagInit;
 public class SpartanWeaponsMain implements ModInitializer {
 
     public static final Identifier ID(String path) {
-        return new Identifier("spartanweapons", path);
+        return Identifier.of("spartanweapons", path);
     }
 
     @Override

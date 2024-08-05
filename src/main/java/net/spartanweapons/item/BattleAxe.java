@@ -5,8 +5,8 @@ import net.minecraft.item.ToolMaterial;
 
 public class BattleAxe extends SwordItem {
 
-    public BattleAxe(ToolMaterial toolMaterial, int attackDamage, float attackSpeed, Settings settings) {
-        super(toolMaterial, attackDamage, attackSpeed, settings);
+    public BattleAxe(ToolMaterial toolMaterial, Settings settings) {
+        super(toolMaterial, settings);
     }
 
 }

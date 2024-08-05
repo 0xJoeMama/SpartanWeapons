@@ -23,8 +23,8 @@ public class Javelin extends SwordItem {
     private final Supplier<EntityType<JavelinEntity>> typeSupplier;
     private EntityType<JavelinEntity> cachedType = null;
 
-    public Javelin(ToolMaterial toolMaterial, float attackDamage, float attackSpeed, Supplier<EntityType<JavelinEntity>> typeSupplier, Settings settings) {
-        super(toolMaterial, (int) attackDamage, attackSpeed, settings);
+    public Javelin(ToolMaterial toolMaterial, Supplier<EntityType<JavelinEntity>> typeSupplier, Settings settings) {
+        super(toolMaterial, settings);
         this.typeSupplier = typeSupplier;
     }
 
@@ -37,19 +37,19 @@ public class Javelin extends SwordItem {
 
     @Override
     public void onStoppedUsing(ItemStack stack, World world, LivingEntity user, int remainingUseTicks) {
-        if (user instanceof PlayerEntity) {
-            PlayerEntity playerEntity = (PlayerEntity) user;
-            int i = this.getMaxUseTime(stack) - remainingUseTicks;
+        if (user instanceof PlayerEntity playerEntity) {
+            int i = this.getMaxUseTime(stack, user) - remainingUseTicks;
             if (i >= 10) {
-                if (!world.isClient) {
-                    stack.damage(1, playerEntity, entity -> entity.sendToolBreakStatus(user.getActiveHand()));
-                    JavelinEntity JavelinEntity = new JavelinEntity(world, playerEntity, this, stack);
-                    JavelinEntity.setVelocity(playerEntity, playerEntity.getPitch(), playerEntity.getYaw(), 0.0F, 2.5F, 1.0F);
+                if (!world.isClient()) {
+                    stack.damage(1, playerEntity, LivingEntity.getSlotForHand(user.getActiveHand()));
+                    JavelinEntity javelinEntity = new JavelinEntity(world, playerEntity, stack);
+                    playerEntity.getX();
+                    javelinEntity.setVelocity(playerEntity, playerEntity.getPitch(), playerEntity.getYaw(), 0.0F, 2.5F, 1.0F);
                     if (playerEntity.isCreative()) {
-                        JavelinEntity.pickupType = PersistentProjectileEntity.PickupPermission.CREATIVE_ONLY;
+                        javelinEntity.pickupType = PersistentProjectileEntity.PickupPermission.CREATIVE_ONLY;
                     }
-                    world.spawnEntity(JavelinEntity);
-                    world.playSoundFromEntity(null, JavelinEntity, SoundEvents.ITEM_TRIDENT_THROW, SoundCategory.PLAYERS, 1.0F, 1.0F);
+                    world.spawnEntity(javelinEntity);
+                    world.playSoundFromEntity(null, javelinEntity, SoundEvents.ITEM_TRIDENT_THROW.value(), SoundCategory.PLAYERS, 1.0F, 1.0F);
                     if (!playerEntity.isCreative()) {
                         playerEntity.getInventory().removeOne(stack);
                     }
@@ -77,8 +77,7 @@ public class Javelin extends SwordItem {
     }
 
     @Override
-    public int getMaxUseTime(ItemStack stack) {
+    public int getMaxUseTime(ItemStack stack, LivingEntity user) {
         return 72000;
     }
-
 }

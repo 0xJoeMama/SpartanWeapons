@@ -5,8 +5,8 @@ import net.minecraft.item.ToolMaterial;
 
 public class Kunai extends SwordItem {
 
-    public Kunai(ToolMaterial toolMaterial, int attackDamage, float attackSpeed, Settings settings) {
-        super(toolMaterial, attackDamage, attackSpeed, settings);
+    public Kunai(ToolMaterial toolMaterial, Settings settings) {
+        super(toolMaterial, settings);
     }
 
 }

@@ -3,14 +3,13 @@ package net.spartanweapons.entity;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.enchantment.EnchantmentHelper;
-import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityGroup;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.FlyingItemEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.data.DataTracker;
+import net.minecraft.entity.data.DataTracker.Builder;
 import net.minecraft.entity.data.TrackedData;
 import net.minecraft.entity.data.TrackedDataHandlerRegistry;
 import net.minecraft.entity.player.PlayerEntity;
@@ -20,9 +19,10 @@ import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtElement;
 import net.minecraft.nbt.NbtList;
 import net.minecraft.server.network.ServerPlayerEntity;
-import net.minecraft.sound.SoundEvent;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.hit.EntityHitResult;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.spartanweapons.init.EntityInit;
@@ -47,25 +47,25 @@ public class JavelinEntity extends PersistentProjectileEntity implements FlyingI
         this.javelin = new ItemStack(item);
     }
 
-    public JavelinEntity(World world, LivingEntity owner, Javelin item, ItemStack stack) {
-        super(item.getType(), owner, world);
-        this.javelin = new ItemStack(item);
-        this.javelin = stack.copy();
+    public JavelinEntity(World world, LivingEntity owner, ItemStack stack) {
+        super(((Javelin) stack.getItem()).getType(), owner, world, stack, null);
+        this.javelin = stack;
+        this.dataTracker.set(LOYALTY, this.getLoyalty(stack));
         this.dataTracker.set(ENCHANTMENT_GLINT, stack.hasGlint());
-        this.dataTracker.set(LOYALTY, (byte) EnchantmentHelper.getLoyalty(stack));
     }
 
-    @Environment(EnvType.CLIENT)
-    public JavelinEntity(World world, double x, double y, double z, Javelin item) {
-        super(item.getType(), x, y, z, world);
-        this.javelin = new ItemStack(item);
+    public JavelinEntity(World world, double x, double y, double z, ItemStack stack) {
+        super(((Javelin) stack.getItem()).getType(), z, z, z, world, stack, stack);
+        this.javelin = stack;
+        this.dataTracker.set(LOYALTY, this.getLoyalty(stack));
+        this.dataTracker.set(ENCHANTMENT_GLINT, stack.hasGlint());
     }
 
     @Override
-    protected void initDataTracker() {
-        super.initDataTracker();
-        this.dataTracker.startTracking(LOYALTY, (byte) 0);
-        this.dataTracker.startTracking(ENCHANTMENT_GLINT, false);
+    protected void initDataTracker(Builder builder) {
+        super.initDataTracker(builder);
+        builder.add(LOYALTY, (byte) 0);
+        builder.add(ENCHANTMENT_GLINT, false);
     }
 
     @Override
@@ -80,57 +80,36 @@ public class JavelinEntity extends PersistentProjectileEntity implements FlyingI
 
     @Override
     protected void onEntityHit(EntityHitResult entityHitResult) {
-        int level = EnchantmentHelper.getLevel(Enchantments.PIERCING, this.javelin);
         Entity hitEntity = entityHitResult.getEntity();
-        if (this.piercedEntities.contains(hitEntity.getUuid()) || this.piercedEntities.size() > level) {
+        if (this.piercedEntities.contains(hitEntity.getUuid()) || this.piercedEntities.size() > this.getPierceLevel()) {
             return;
         }
         this.piercedEntities.add(hitEntity.getUuid());
-        float damage = ((Javelin) this.javelin.getItem()).getAttackDamage() * 2.35F;
-        if (hitEntity instanceof LivingEntity && ((LivingEntity) hitEntity).getGroup() == EntityGroup.AQUATIC) {
-            int impalingLevel = EnchantmentHelper.getLevel(Enchantments.IMPALING, this.javelin);
-            if (impalingLevel > 0) {
-                damage += impalingLevel * 1.5F;
-            }
-        }
+        float damage = ((Javelin) this.javelin.getItem()).getMaterial().getAttackDamage() * 2.35F;
         this.dealtDamage = true;
 
         Entity owner = this.getOwner();
-        // if (CompatInit.isLevelZLoaded && owner instanceof PlayerEntity) {
-        // int archeryLevel = ((PlayerStatsManagerAccess) owner).getPlayerStatsManager().getSkillLevel(Skill.ARCHERY);
-        // damage += archeryLevel >= ConfigInit.CONFIG.maxLevel && ConfigInit.CONFIG.archeryDoubleDamageChance > this.getWorld().getRandom().nextFloat() ? damage
-        // : (double) archeryLevel * ConfigInit.CONFIG.archeryBowExtraDamage;
-        // }
 
         DamageSource damageSource = createDamageSource(this, owner == null ? this : owner);
-        SoundEvent soundEvent = SoundEvents.ITEM_TRIDENT_HIT;
-
         if (hitEntity.damage(damageSource, damage)) {
             if (hitEntity.getType() == EntityType.ENDERMAN) {
                 return;
             }
-            if (hitEntity instanceof LivingEntity) {
-                LivingEntity hitLivingEntity = (LivingEntity) hitEntity;
-                if (owner instanceof LivingEntity) {
-                    EnchantmentHelper.onUserDamaged(hitLivingEntity, owner);
-                    EnchantmentHelper.onTargetDamaged((LivingEntity) owner, hitLivingEntity);
-                }
-
-                int fireAspectLevel = EnchantmentHelper.getLevel(Enchantments.FIRE_ASPECT, this.javelin);
-                if (fireAspectLevel > 0) {
-                    hitLivingEntity.setOnFireFor(fireAspectLevel * 4);
-                }
-                this.playSound(soundEvent, 1.0F, 1.0F);
-                this.onHit(hitLivingEntity);
+            if (this.getWorld() instanceof ServerWorld serverWorld) {
+                EnchantmentHelper.onTargetDamaged(serverWorld, hitEntity, damageSource, this.getWeaponStack());
+            }
+            if (hitEntity instanceof LivingEntity livingEntity) {
+                this.knockback(livingEntity, damageSource);
+                this.onHit(livingEntity);
             }
         }
 
-        if (this.piercedEntities.size() > level) {
+        if (this.piercedEntities.size() > this.getPierceLevel()) {
             this.setVelocity(this.getVelocity().multiply(-0.01D, -0.1D, -0.01D));
         } else {
             this.setVelocity(this.getVelocity().multiply(0.75));
         }
-
+        this.playSound(SoundEvents.ITEM_TRIDENT_HIT, 1.0f, 1.0f);
     }
 
     @Override
@@ -191,7 +170,7 @@ public class JavelinEntity extends PersistentProjectileEntity implements FlyingI
     public void readCustomDataFromNbt(NbtCompound nbt) {
         super.readCustomDataFromNbt(nbt);
         if (nbt.contains("javelin", 10)) {
-            this.javelin = ItemStack.fromNbt(nbt.getCompound("javelin"));
+            this.javelin = ItemStack.fromNbt(this.getRegistryManager(), nbt.getCompound("javelin")).orElse(this.getDefaultItemStack());
             this.dataTracker.set(ENCHANTMENT_GLINT, this.javelin.hasGlint());
         }
 
@@ -202,13 +181,20 @@ public class JavelinEntity extends PersistentProjectileEntity implements FlyingI
             }
         }
         this.dealtDamage = nbt.getBoolean("DealtDamage");
-        this.dataTracker.set(LOYALTY, (byte) EnchantmentHelper.getLoyalty(this.javelin));
+        this.dataTracker.set(LOYALTY, this.getLoyalty(this.getItemStack()));
+    }
+
+    private byte getLoyalty(ItemStack stack) {
+        if (this.getWorld() instanceof ServerWorld serverWorld) {
+            return (byte) MathHelper.clamp(EnchantmentHelper.getTridentReturnAcceleration(serverWorld, stack, this), 0, 127);
+        }
+        return 0;
     }
 
     @Override
     public void writeCustomDataToNbt(NbtCompound nbt) {
         super.writeCustomDataToNbt(nbt);
-        nbt.put("javelin", this.javelin.writeNbt(new NbtCompound()));
+        nbt.put("javelin", this.javelin.encode(this.getRegistryManager()));
 
         NbtList tags = new NbtList();
         for (UUID uuid : this.piercedEntities) {
@@ -237,7 +223,7 @@ public class JavelinEntity extends PersistentProjectileEntity implements FlyingI
 
     @Override
     public ItemStack getStack() {
-        return javelin;
+        return this.javelin;
     }
 
     static {
@@ -247,6 +233,11 @@ public class JavelinEntity extends PersistentProjectileEntity implements FlyingI
 
     private DamageSource createDamageSource(Entity source, Entity attacker) {
         return attacker.getDamageSources().create(EntityInit.JAVELIN, source, attacker);
+    }
+
+    @Override
+    protected ItemStack getDefaultItemStack() {
+        return this.javelin;
     }
 
 }

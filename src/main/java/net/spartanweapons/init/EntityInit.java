@@ -3,8 +3,6 @@ package net.spartanweapons.init;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
-import net.minecraft.entity.EntityDimensions;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
 import net.minecraft.entity.damage.DamageType;
@@ -26,7 +24,7 @@ public class EntityInit {
     public static final EntityType<JavelinEntity> DIAMOND_JAVELIN = register("diamond_javelin", createJavelin(ItemInit.DIAMOND_JAVELIN));
     public static final EntityType<JavelinEntity> NETHERITE_JAVELIN = register("netherite_javelin", createJavelin(ItemInit.NETHERITE_JAVELIN));
     // Damage
-    public static final RegistryKey<DamageType> JAVELIN = RegistryKey.of(RegistryKeys.DAMAGE_TYPE, new Identifier("spartanweapons", "javelin"));
+    public static final RegistryKey<DamageType> JAVELIN = RegistryKey.of(RegistryKeys.DAMAGE_TYPE, Identifier.of("spartanweapons", "javelin"));
 
     public static void init() {
         // CompatEntities.loadEntities();
@@ -36,13 +34,13 @@ public class EntityInit {
     }
 
     public static <T extends EntityType<?>> T register(String name, T type) {
-        Identifier id = new Identifier("medievalweapons", name);
+        Identifier id = Identifier.of("medievalweapons", name);
         ENTITY_TYPES.put(id, type);
         return type;
     }
 
+    // JavelinEntity
     public static EntityType<JavelinEntity> createJavelin(Item item) {
-        return FabricEntityTypeBuilder.<JavelinEntity>create(SpawnGroup.MISC, (entity, world) -> new JavelinEntity(entity, world, (Javelin) item)).dimensions(EntityDimensions.fixed(0.5F, 0.5F))
-                .build();
+        return EntityType.Builder.<JavelinEntity>create((entity, world) -> new JavelinEntity(entity, world, (Javelin) item), SpawnGroup.MISC).dimensions(0.5F, 0.5F).build();
     }
 }
