@@ -18,7 +18,6 @@ import net.spartanweapons.entity.JavelinEntity;
 @SuppressWarnings("deprecation")
 @Environment(EnvType.CLIENT)
 public class JavelinEntityRenderer extends EntityRenderer<JavelinEntity> {
-
     private final ItemRenderer itemRenderer;
 
     public JavelinEntityRenderer(EntityRendererFactory.Context context) {
@@ -42,8 +41,7 @@ public class JavelinEntityRenderer extends EntityRenderer<JavelinEntity> {
     }
 
     @Override
-    public Identifier getTexture(JavelinEntity javelin_Entity) {
+    public Identifier getTexture(JavelinEntity entity) {
         return SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE;
     }
-
 }

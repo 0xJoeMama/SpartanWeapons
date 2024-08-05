@@ -7,14 +7,10 @@ import org.jetbrains.annotations.Nullable;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.minecraft.client.item.ModelPredicateProviderRegistry;
-import net.minecraft.item.Item;
-import net.minecraft.util.Identifier;
 
 @Environment(EnvType.CLIENT)
 public class ModelInit {
 
-    private static final List<Item> THROWING_ITEMS = List.of(ItemInit.IRON_JAVELIN, ItemInit.GOLDEN_JAVELIN, ItemInit.DIAMOND_JAVELIN, ItemInit.NETHERITE_JAVELIN);
    // public static RuntimeResourcePack ARRP_RESOURCE_PACK;
 
     public static void init() {

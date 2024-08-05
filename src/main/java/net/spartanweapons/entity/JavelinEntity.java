@@ -26,7 +26,7 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.spartanweapons.init.EntityInit;
-import net.spartanweapons.item.Javelin;
+import net.spartanweapons.item.JavelinItem;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -42,20 +42,20 @@ public class JavelinEntity extends PersistentProjectileEntity implements FlyingI
     public int returnTimer;
     private boolean dealtDamage;
 
-    public JavelinEntity(EntityType<? extends JavelinEntity> entityType, World world, Javelin item) {
+    public JavelinEntity(EntityType<? extends JavelinEntity> entityType, World world, JavelinItem item) {
         super(entityType, world);
         this.javelin = new ItemStack(item);
     }
 
     public JavelinEntity(World world, LivingEntity owner, ItemStack stack) {
-        super(((Javelin) stack.getItem()).getType(), owner, world, stack, null);
+        super(((JavelinItem) stack.getItem()).getType(), owner, world, stack, null);
         this.javelin = stack;
         this.dataTracker.set(LOYALTY, this.getLoyalty(stack));
         this.dataTracker.set(ENCHANTMENT_GLINT, stack.hasGlint());
     }
 
     public JavelinEntity(World world, double x, double y, double z, ItemStack stack) {
-        super(((Javelin) stack.getItem()).getType(), z, z, z, world, stack, stack);
+        super(((JavelinItem) stack.getItem()).getType(), z, z, z, world, stack, stack);
         this.javelin = stack;
         this.dataTracker.set(LOYALTY, this.getLoyalty(stack));
         this.dataTracker.set(ENCHANTMENT_GLINT, stack.hasGlint());
@@ -85,7 +85,7 @@ public class JavelinEntity extends PersistentProjectileEntity implements FlyingI
             return;
         }
         this.piercedEntities.add(hitEntity.getUuid());
-        float damage = ((Javelin) this.javelin.getItem()).getMaterial().getAttackDamage() * 2.35F;
+        float damage = ((JavelinItem) this.javelin.getItem()).getMaterial().getAttackDamage() * 2.35F;
         this.dealtDamage = true;
 
         Entity owner = this.getOwner();

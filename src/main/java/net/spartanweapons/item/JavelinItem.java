@@ -1,13 +1,10 @@
 package net.spartanweapons.item;
 
-import java.util.function.Supplier;
-
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.PersistentProjectileEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.SwordItem;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
@@ -18,21 +15,18 @@ import net.minecraft.util.UseAction;
 import net.minecraft.world.World;
 import net.spartanweapons.entity.JavelinEntity;
 
-public class Javelin extends SwordItem {
+import java.util.function.Supplier;
 
-    private final Supplier<EntityType<JavelinEntity>> typeSupplier;
-    private EntityType<JavelinEntity> cachedType = null;
+public class JavelinItem extends SpartanWeaponItem {
+    private final Supplier<EntityType<JavelinEntity>> type;
 
-    public Javelin(ToolMaterial toolMaterial, Supplier<EntityType<JavelinEntity>> typeSupplier, Settings settings) {
+    public JavelinItem(ToolMaterial toolMaterial, Supplier<EntityType<JavelinEntity>> type, Settings settings) {
         super(toolMaterial, settings);
-        this.typeSupplier = typeSupplier;
+        this.type = type;
     }
 
     public EntityType<JavelinEntity> getType() {
-        if (cachedType == null) {
-            cachedType = typeSupplier.get();
-        }
-        return cachedType;
+        return this.type.get();
     }
 
     @Override
@@ -43,7 +37,6 @@ public class Javelin extends SwordItem {
                 if (!world.isClient()) {
                     stack.damage(1, playerEntity, LivingEntity.getSlotForHand(user.getActiveHand()));
                     JavelinEntity javelinEntity = new JavelinEntity(world, playerEntity, stack);
-                    playerEntity.getX();
                     javelinEntity.setVelocity(playerEntity, playerEntity.getPitch(), playerEntity.getYaw(), 0.0F, 2.5F, 1.0F);
                     if (playerEntity.isCreative()) {
                         javelinEntity.pickupType = PersistentProjectileEntity.PickupPermission.CREATIVE_ONLY;

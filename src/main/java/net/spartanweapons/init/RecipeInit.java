@@ -22,73 +22,73 @@ public class RecipeInit {
     public static void generateRecipes() {
         // Pole
         SHAPED_RECIPES.put("acacia_pole",
-                new ShapedRecipeMaterial(Registries.ITEM.getId(Items.LEATHER), Registries.ITEM.getId(ItemInit.ACACIA_STICK), null, "item", "item", "", SpartanWeaponsMain.ID("acacia_pole"), "pole"));
+                new ShapedRecipeMaterial(Registries.ITEM.getId(Items.LEATHER), Registries.ITEM.getId(ItemInit.ACACIA_STICK), null, "item", "item", "", SpartanWeaponsMain.id("acacia_pole"), "pole"));
         SHAPED_RECIPES.put("bamboo_pole",
-                new ShapedRecipeMaterial(Registries.ITEM.getId(Items.LEATHER), Registries.ITEM.getId(ItemInit.BAMBOO_STICK), null, "item", "item", "", SpartanWeaponsMain.ID("bamboo_pole"), "pole"));
+                new ShapedRecipeMaterial(Registries.ITEM.getId(Items.LEATHER), Registries.ITEM.getId(ItemInit.BAMBOO_STICK), null, "item", "item", "", SpartanWeaponsMain.id("bamboo_pole"), "pole"));
         SHAPED_RECIPES.put("birch_pole",
-                new ShapedRecipeMaterial(Registries.ITEM.getId(Items.LEATHER), Registries.ITEM.getId(ItemInit.BIRCH_STICK), null, "item", "item", "", SpartanWeaponsMain.ID("birch_pole"), "pole"));
+                new ShapedRecipeMaterial(Registries.ITEM.getId(Items.LEATHER), Registries.ITEM.getId(ItemInit.BIRCH_STICK), null, "item", "item", "", SpartanWeaponsMain.id("birch_pole"), "pole"));
         SHAPED_RECIPES.put("cherry_pole",
-                new ShapedRecipeMaterial(Registries.ITEM.getId(Items.LEATHER), Registries.ITEM.getId(ItemInit.CHERRY_STICK), null, "item", "item", "", SpartanWeaponsMain.ID("cherry_pole"), "pole"));
+                new ShapedRecipeMaterial(Registries.ITEM.getId(Items.LEATHER), Registries.ITEM.getId(ItemInit.CHERRY_STICK), null, "item", "item", "", SpartanWeaponsMain.id("cherry_pole"), "pole"));
         SHAPED_RECIPES.put("crimson_pole", new ShapedRecipeMaterial(Registries.ITEM.getId(Items.LEATHER), Registries.ITEM.getId(ItemInit.CRIMSON_STICK), null, "item", "item", "",
-                SpartanWeaponsMain.ID("crimson_pole"), "pole"));
+                SpartanWeaponsMain.id("crimson_pole"), "pole"));
         SHAPED_RECIPES.put("dark_oak_pole", new ShapedRecipeMaterial(Registries.ITEM.getId(Items.LEATHER), Registries.ITEM.getId(ItemInit.DARK_OAK_STICK), null, "item", "item", "",
-                SpartanWeaponsMain.ID("dark_oak_pole"), "pole"));
+                SpartanWeaponsMain.id("dark_oak_pole"), "pole"));
         SHAPED_RECIPES.put("jungle_pole",
-                new ShapedRecipeMaterial(Registries.ITEM.getId(Items.LEATHER), Registries.ITEM.getId(ItemInit.JUNGLE_STICK), null, "item", "item", "", SpartanWeaponsMain.ID("jungle_pole"), "pole"));
+                new ShapedRecipeMaterial(Registries.ITEM.getId(Items.LEATHER), Registries.ITEM.getId(ItemInit.JUNGLE_STICK), null, "item", "item", "", SpartanWeaponsMain.id("jungle_pole"), "pole"));
         SHAPED_RECIPES.put("mangrove_pole", new ShapedRecipeMaterial(Registries.ITEM.getId(Items.LEATHER), Registries.ITEM.getId(ItemInit.MANGROVE_STICK), null, "item", "item", "",
-                SpartanWeaponsMain.ID("mangrove_pole"), "pole"));
+                SpartanWeaponsMain.id("mangrove_pole"), "pole"));
         SHAPED_RECIPES.put("oak_pole",
-                new ShapedRecipeMaterial(Registries.ITEM.getId(Items.LEATHER), Registries.ITEM.getId(Items.STICK), null, "item", "item", "", SpartanWeaponsMain.ID("oak_pole"), "pole"));
+                new ShapedRecipeMaterial(Registries.ITEM.getId(Items.LEATHER), Registries.ITEM.getId(Items.STICK), null, "item", "item", "", SpartanWeaponsMain.id("oak_pole"), "pole"));
         SHAPED_RECIPES.put("spruce_pole",
-                new ShapedRecipeMaterial(Registries.ITEM.getId(Items.LEATHER), Registries.ITEM.getId(ItemInit.SPRUCE_STICK), null, "item", "item", "", SpartanWeaponsMain.ID("spruce_pole"), "pole"));
+                new ShapedRecipeMaterial(Registries.ITEM.getId(Items.LEATHER), Registries.ITEM.getId(ItemInit.SPRUCE_STICK), null, "item", "item", "", SpartanWeaponsMain.id("spruce_pole"), "pole"));
         SHAPED_RECIPES.put("warped_pole",
-                new ShapedRecipeMaterial(Registries.ITEM.getId(Items.LEATHER), Registries.ITEM.getId(ItemInit.WARPED_STICK), null, "item", "item", "", SpartanWeaponsMain.ID("warped_pole"), "pole"));
+                new ShapedRecipeMaterial(Registries.ITEM.getId(Items.LEATHER), Registries.ITEM.getId(ItemInit.WARPED_STICK), null, "item", "item", "", SpartanWeaponsMain.id("warped_pole"), "pole"));
         // Wood
         SHAPED_RECIPES.put("acacia_club", new ShapedRecipeMaterial(Registries.ITEM.getId(Items.ACACIA_PLANKS), Registries.ITEM.getId(ItemInit.ACACIA_STICK), null, "item", "item", "",
-                SpartanWeaponsMain.ID("acacia_club"), "club"));
+                SpartanWeaponsMain.id("acacia_club"), "club"));
         SHAPED_RECIPES.put("bamboo_club", new ShapedRecipeMaterial(Registries.ITEM.getId(Items.BAMBOO_PLANKS), Registries.ITEM.getId(ItemInit.BAMBOO_STICK), null, "item", "item", "",
-                SpartanWeaponsMain.ID("bamboo_club"), "club"));
+                SpartanWeaponsMain.id("bamboo_club"), "club"));
         SHAPED_RECIPES.put("birch_club", new ShapedRecipeMaterial(Registries.ITEM.getId(Items.BIRCH_PLANKS), Registries.ITEM.getId(ItemInit.BIRCH_STICK), null, "item", "item", "",
-                SpartanWeaponsMain.ID("birch_club"), "club"));
+                SpartanWeaponsMain.id("birch_club"), "club"));
         SHAPED_RECIPES.put("cherry_club", new ShapedRecipeMaterial(Registries.ITEM.getId(Items.CHERRY_PLANKS), Registries.ITEM.getId(ItemInit.CHERRY_STICK), null, "item", "item", "",
-                SpartanWeaponsMain.ID("cherry_club"), "club"));
+                SpartanWeaponsMain.id("cherry_club"), "club"));
         SHAPED_RECIPES.put("crimson_club", new ShapedRecipeMaterial(Registries.ITEM.getId(Items.CRIMSON_PLANKS), Registries.ITEM.getId(ItemInit.CRIMSON_STICK), null, "item", "item", "",
-                SpartanWeaponsMain.ID("crimson_club"), "club"));
+                SpartanWeaponsMain.id("crimson_club"), "club"));
         SHAPED_RECIPES.put("dark_oak_club", new ShapedRecipeMaterial(Registries.ITEM.getId(Items.DARK_OAK_PLANKS), Registries.ITEM.getId(ItemInit.DARK_OAK_STICK), null, "item", "item", "",
-                SpartanWeaponsMain.ID("dark_oak_club"), "club"));
+                SpartanWeaponsMain.id("dark_oak_club"), "club"));
         SHAPED_RECIPES.put("jungle_club", new ShapedRecipeMaterial(Registries.ITEM.getId(Items.JUNGLE_PLANKS), Registries.ITEM.getId(ItemInit.JUNGLE_STICK), null, "item", "item", "",
-                SpartanWeaponsMain.ID("jungle_club"), "club"));
+                SpartanWeaponsMain.id("jungle_club"), "club"));
         SHAPED_RECIPES.put("mangrove_club", new ShapedRecipeMaterial(Registries.ITEM.getId(Items.MANGROVE_PLANKS), Registries.ITEM.getId(ItemInit.MANGROVE_STICK), null, "item", "item", "",
-                SpartanWeaponsMain.ID("mangrove_club"), "club"));
+                SpartanWeaponsMain.id("mangrove_club"), "club"));
         SHAPED_RECIPES.put("oak_club",
-                new ShapedRecipeMaterial(Registries.ITEM.getId(Items.OAK_PLANKS), Registries.ITEM.getId(Items.STICK), null, "item", "item", "", SpartanWeaponsMain.ID("oak_club"), "club"));
+                new ShapedRecipeMaterial(Registries.ITEM.getId(Items.OAK_PLANKS), Registries.ITEM.getId(Items.STICK), null, "item", "item", "", SpartanWeaponsMain.id("oak_club"), "club"));
         SHAPED_RECIPES.put("spruce_club", new ShapedRecipeMaterial(Registries.ITEM.getId(Items.SPRUCE_PLANKS), Registries.ITEM.getId(ItemInit.SPRUCE_STICK), null, "item", "item", "",
-                SpartanWeaponsMain.ID("spruce_club"), "club"));
+                SpartanWeaponsMain.id("spruce_club"), "club"));
         SHAPED_RECIPES.put("warped_club", new ShapedRecipeMaterial(Registries.ITEM.getId(Items.WARPED_PLANKS), Registries.ITEM.getId(ItemInit.WARPED_STICK), null, "item", "item", "",
-                SpartanWeaponsMain.ID("warped_club"), "club"));
+                SpartanWeaponsMain.id("warped_club"), "club"));
 
         SHAPED_RECIPES.put("acacia_staff", new ShapedRecipeMaterial(Registries.ITEM.getId(Items.ACACIA_PLANKS), Registries.ITEM.getId(ItemInit.ACACIA_STICK), null, "item", "item", "",
-                SpartanWeaponsMain.ID("acacia_staff"), "staff"));
+                SpartanWeaponsMain.id("acacia_staff"), "staff"));
         SHAPED_RECIPES.put("bamboo_staff", new ShapedRecipeMaterial(Registries.ITEM.getId(Items.BAMBOO_PLANKS), Registries.ITEM.getId(ItemInit.BAMBOO_STICK), null, "item", "item", "",
-                SpartanWeaponsMain.ID("bamboo_staff"), "staff"));
+                SpartanWeaponsMain.id("bamboo_staff"), "staff"));
         SHAPED_RECIPES.put("birch_staff", new ShapedRecipeMaterial(Registries.ITEM.getId(Items.BIRCH_PLANKS), Registries.ITEM.getId(ItemInit.BIRCH_STICK), null, "item", "item", "",
-                SpartanWeaponsMain.ID("birch_staff"), "staff"));
+                SpartanWeaponsMain.id("birch_staff"), "staff"));
         SHAPED_RECIPES.put("cherry_staff", new ShapedRecipeMaterial(Registries.ITEM.getId(Items.CHERRY_PLANKS), Registries.ITEM.getId(ItemInit.CHERRY_STICK), null, "item", "item", "",
-                SpartanWeaponsMain.ID("cherry_staff"), "staff"));
+                SpartanWeaponsMain.id("cherry_staff"), "staff"));
         SHAPED_RECIPES.put("crimson_staff", new ShapedRecipeMaterial(Registries.ITEM.getId(Items.CRIMSON_PLANKS), Registries.ITEM.getId(ItemInit.CRIMSON_STICK), null, "item", "item", "",
-                SpartanWeaponsMain.ID("crimson_staff"), "staff"));
+                SpartanWeaponsMain.id("crimson_staff"), "staff"));
         SHAPED_RECIPES.put("dark_oak_staff", new ShapedRecipeMaterial(Registries.ITEM.getId(Items.DARK_OAK_PLANKS), Registries.ITEM.getId(ItemInit.DARK_OAK_STICK), null, "item", "item", "",
-                SpartanWeaponsMain.ID("dark_oak_staff"), "staff"));
+                SpartanWeaponsMain.id("dark_oak_staff"), "staff"));
         SHAPED_RECIPES.put("jungle_staff", new ShapedRecipeMaterial(Registries.ITEM.getId(Items.JUNGLE_PLANKS), Registries.ITEM.getId(ItemInit.JUNGLE_STICK), null, "item", "item", "",
-                SpartanWeaponsMain.ID("jungle_staff"), "staff"));
+                SpartanWeaponsMain.id("jungle_staff"), "staff"));
         SHAPED_RECIPES.put("mangrove_staff", new ShapedRecipeMaterial(Registries.ITEM.getId(Items.MANGROVE_PLANKS), Registries.ITEM.getId(ItemInit.MANGROVE_STICK), null, "item", "item", "",
-                SpartanWeaponsMain.ID("mangrove_staff"), "staff"));
+                SpartanWeaponsMain.id("mangrove_staff"), "staff"));
         SHAPED_RECIPES.put("oak_staff",
-                new ShapedRecipeMaterial(Registries.ITEM.getId(Items.OAK_PLANKS), Registries.ITEM.getId(Items.STICK), null, "item", "item", "", SpartanWeaponsMain.ID("oak_staff"), "staff"));
+                new ShapedRecipeMaterial(Registries.ITEM.getId(Items.OAK_PLANKS), Registries.ITEM.getId(Items.STICK), null, "item", "item", "", SpartanWeaponsMain.id("oak_staff"), "staff"));
         SHAPED_RECIPES.put("spruce_staff", new ShapedRecipeMaterial(Registries.ITEM.getId(Items.SPRUCE_PLANKS), Registries.ITEM.getId(ItemInit.SPRUCE_STICK), null, "item", "item", "",
-                SpartanWeaponsMain.ID("spruce_staff"), "staff"));
+                SpartanWeaponsMain.id("spruce_staff"), "staff"));
         SHAPED_RECIPES.put("warped_staff", new ShapedRecipeMaterial(Registries.ITEM.getId(Items.WARPED_PLANKS), Registries.ITEM.getId(ItemInit.WARPED_STICK), null, "item", "item", "",
-                SpartanWeaponsMain.ID("warped_staff"), "staff"));
+                SpartanWeaponsMain.id("warped_staff"), "staff"));
 
         // Stone
         // SHAPED_RECIPES.put("stone_cutlass",
@@ -119,115 +119,115 @@ public class RecipeInit {
 
         // Gold
         SHAPED_RECIPES.put("golden_cutlass",
-                new ShapedRecipeMaterial(Registries.ITEM.getId(Items.GOLD_INGOT), Identifier.of("c", "sticks"), null, "item", "tag", "", SpartanWeaponsMain.ID("golden_cutlass"), "cutlass"));
+                new ShapedRecipeMaterial(Registries.ITEM.getId(Items.GOLD_INGOT), Identifier.of("c", "sticks"), null, "item", "tag", "", SpartanWeaponsMain.id("golden_cutlass"), "cutlass"));
         SHAPED_RECIPES.put("golden_dagger",
-                new ShapedRecipeMaterial(Registries.ITEM.getId(Items.GOLD_INGOT), Identifier.of("c", "sticks"), null, "item", "tag", "", SpartanWeaponsMain.ID("golden_dagger"), "dagger"));
+                new ShapedRecipeMaterial(Registries.ITEM.getId(Items.GOLD_INGOT), Identifier.of("c", "sticks"), null, "item", "tag", "", SpartanWeaponsMain.id("golden_dagger"), "dagger"));
         SHAPED_RECIPES.put("golden_glaive",
-                new ShapedRecipeMaterial(Registries.ITEM.getId(Items.GOLD_INGOT), Identifier.of("c", "poles"), null, "item", "tag", "", SpartanWeaponsMain.ID("golden_glaive"), "glaive"));
+                new ShapedRecipeMaterial(Registries.ITEM.getId(Items.GOLD_INGOT), Identifier.of("c", "poles"), null, "item", "tag", "", SpartanWeaponsMain.id("golden_glaive"), "glaive"));
         SHAPED_RECIPES.put("golden_greatsword",
-                new ShapedRecipeMaterial(Registries.ITEM.getId(Items.GOLD_INGOT), Identifier.of("c", "sticks"), null, "item", "tag", "", SpartanWeaponsMain.ID("golden_greatsword"), "greatsword"));
+                new ShapedRecipeMaterial(Registries.ITEM.getId(Items.GOLD_INGOT), Identifier.of("c", "sticks"), null, "item", "tag", "", SpartanWeaponsMain.id("golden_greatsword"), "greatsword"));
         SHAPED_RECIPES.put("golden_halberd",
-                new ShapedRecipeMaterial(Registries.ITEM.getId(Items.GOLD_INGOT), Identifier.of("c", "sticks"), null, "item", "tag", "", SpartanWeaponsMain.ID("golden_halberd"), "halberd"));
+                new ShapedRecipeMaterial(Registries.ITEM.getId(Items.GOLD_INGOT), Identifier.of("c", "sticks"), null, "item", "tag", "", SpartanWeaponsMain.id("golden_halberd"), "halberd"));
         SHAPED_RECIPES.put("golden_katana",
-                new ShapedRecipeMaterial(Registries.ITEM.getId(Items.GOLD_INGOT), Identifier.of("c", "sticks"), null, "item", "tag", "", SpartanWeaponsMain.ID("golden_katana"), "katana"));
+                new ShapedRecipeMaterial(Registries.ITEM.getId(Items.GOLD_INGOT), Identifier.of("c", "sticks"), null, "item", "tag", "", SpartanWeaponsMain.id("golden_katana"), "katana"));
         SHAPED_RECIPES.put("golden_mace", new ShapedRecipeMaterial(Registries.ITEM.getId(Items.GOLD_INGOT), Identifier.of("c", "sticks"), Registries.ITEM.getId(Items.GOLD_BLOCK), "item", "tag",
-                "item", SpartanWeaponsMain.ID("golden_mace"), "mace"));
+                "item", SpartanWeaponsMain.id("golden_mace"), "mace"));
         SHAPED_RECIPES.put("golden_rapier",
-                new ShapedRecipeMaterial(Registries.ITEM.getId(Items.GOLD_INGOT), Identifier.of("c", "sticks"), null, "item", "tag", "", SpartanWeaponsMain.ID("golden_rapier"), "rapier"));
+                new ShapedRecipeMaterial(Registries.ITEM.getId(Items.GOLD_INGOT), Identifier.of("c", "sticks"), null, "item", "tag", "", SpartanWeaponsMain.id("golden_rapier"), "rapier"));
         SHAPED_RECIPES.put("golden_scythe", new ShapedRecipeMaterial(Registries.ITEM.getId(Items.GOLD_INGOT), Identifier.of("c", "sticks"), Identifier.of("c", "poles"), "item", "tag", "tag",
-                SpartanWeaponsMain.ID("golden_scythe"), "scythe"));
+                SpartanWeaponsMain.id("golden_scythe"), "scythe"));
         SHAPED_RECIPES.put("golden_spear",
-                new ShapedRecipeMaterial(Registries.ITEM.getId(Items.GOLD_INGOT), Identifier.of("c", "poles"), null, "item", "tag", "", SpartanWeaponsMain.ID("golden_spear"), "spear"));
+                new ShapedRecipeMaterial(Registries.ITEM.getId(Items.GOLD_INGOT), Identifier.of("c", "poles"), null, "item", "tag", "", SpartanWeaponsMain.id("golden_spear"), "spear"));
         SHAPED_RECIPES.put("golden_battle_axe", new ShapedRecipeMaterial(Registries.ITEM.getId(Items.GOLD_INGOT), Identifier.of("c", "sticks"), Identifier.of("c", "poles"), "item", "tag", "tag",
-                SpartanWeaponsMain.ID("golden_battle_axe"), "battle_axe"));
+                SpartanWeaponsMain.id("golden_battle_axe"), "battle_axe"));
         SHAPED_RECIPES.put("golden_kunai", new ShapedRecipeMaterial(Registries.ITEM.getId(Items.GOLD_INGOT), Identifier.of("c", "sticks"), Registries.ITEM.getId(Items.SLIME_BALL), "item", "tag",
-                "item", SpartanWeaponsMain.ID("golden_kunai"), "kunai"));
+                "item", SpartanWeaponsMain.id("golden_kunai"), "kunai"));
         SHAPED_RECIPES.put("golden_javelin", new ShapedRecipeMaterial(Registries.ITEM.getId(Items.GOLD_INGOT), Identifier.of("c", "poles"), Registries.ITEM.getId(Items.SLIME_BALL), "item", "tag",
-                "item", SpartanWeaponsMain.ID("golden_javelin"), "javelin"));
+                "item", SpartanWeaponsMain.id("golden_javelin"), "javelin"));
 
         // Iron
         SHAPED_RECIPES.put("iron_cutlass",
-                new ShapedRecipeMaterial(Registries.ITEM.getId(Items.IRON_INGOT), Identifier.of("c", "sticks"), null, "item", "tag", "", SpartanWeaponsMain.ID("iron_cutlass"), "cutlass"));
+                new ShapedRecipeMaterial(Registries.ITEM.getId(Items.IRON_INGOT), Identifier.of("c", "sticks"), null, "item", "tag", "", SpartanWeaponsMain.id("iron_cutlass"), "cutlass"));
         SHAPED_RECIPES.put("iron_dagger",
-                new ShapedRecipeMaterial(Registries.ITEM.getId(Items.IRON_INGOT), Identifier.of("c", "sticks"), null, "item", "tag", "", SpartanWeaponsMain.ID("iron_dagger"), "dagger"));
+                new ShapedRecipeMaterial(Registries.ITEM.getId(Items.IRON_INGOT), Identifier.of("c", "sticks"), null, "item", "tag", "", SpartanWeaponsMain.id("iron_dagger"), "dagger"));
         SHAPED_RECIPES.put("iron_glaive",
-                new ShapedRecipeMaterial(Registries.ITEM.getId(Items.IRON_INGOT), Identifier.of("c", "poles"), null, "item", "tag", "", SpartanWeaponsMain.ID("iron_glaive"), "glaive"));
+                new ShapedRecipeMaterial(Registries.ITEM.getId(Items.IRON_INGOT), Identifier.of("c", "poles"), null, "item", "tag", "", SpartanWeaponsMain.id("iron_glaive"), "glaive"));
         SHAPED_RECIPES.put("iron_greatsword",
-                new ShapedRecipeMaterial(Registries.ITEM.getId(Items.IRON_INGOT), Identifier.of("c", "sticks"), null, "item", "tag", "", SpartanWeaponsMain.ID("iron_greatsword"), "greatsword"));
+                new ShapedRecipeMaterial(Registries.ITEM.getId(Items.IRON_INGOT), Identifier.of("c", "sticks"), null, "item", "tag", "", SpartanWeaponsMain.id("iron_greatsword"), "greatsword"));
         SHAPED_RECIPES.put("iron_halberd",
-                new ShapedRecipeMaterial(Registries.ITEM.getId(Items.IRON_INGOT), Identifier.of("c", "sticks"), null, "item", "tag", "", SpartanWeaponsMain.ID("iron_halberd"), "halberd"));
+                new ShapedRecipeMaterial(Registries.ITEM.getId(Items.IRON_INGOT), Identifier.of("c", "sticks"), null, "item", "tag", "", SpartanWeaponsMain.id("iron_halberd"), "halberd"));
         SHAPED_RECIPES.put("iron_katana",
-                new ShapedRecipeMaterial(Registries.ITEM.getId(Items.IRON_INGOT), Identifier.of("c", "sticks"), null, "item", "tag", "", SpartanWeaponsMain.ID("iron_katana"), "katana"));
+                new ShapedRecipeMaterial(Registries.ITEM.getId(Items.IRON_INGOT), Identifier.of("c", "sticks"), null, "item", "tag", "", SpartanWeaponsMain.id("iron_katana"), "katana"));
         SHAPED_RECIPES.put("iron_mace", new ShapedRecipeMaterial(Registries.ITEM.getId(Items.IRON_INGOT), Identifier.of("c", "sticks"), Registries.ITEM.getId(Items.IRON_BLOCK), "item", "tag", "item",
-                SpartanWeaponsMain.ID("iron_mace"), "mace"));
+                SpartanWeaponsMain.id("iron_mace"), "mace"));
         SHAPED_RECIPES.put("iron_rapier",
-                new ShapedRecipeMaterial(Registries.ITEM.getId(Items.IRON_INGOT), Identifier.of("c", "sticks"), null, "item", "tag", "", SpartanWeaponsMain.ID("iron_rapier"), "rapier"));
+                new ShapedRecipeMaterial(Registries.ITEM.getId(Items.IRON_INGOT), Identifier.of("c", "sticks"), null, "item", "tag", "", SpartanWeaponsMain.id("iron_rapier"), "rapier"));
         SHAPED_RECIPES.put("iron_scythe", new ShapedRecipeMaterial(Registries.ITEM.getId(Items.IRON_INGOT), Identifier.of("c", "sticks"), Identifier.of("c", "poles"), "item", "tag", "tag",
-                SpartanWeaponsMain.ID("iron_scythe"), "scythe"));
+                SpartanWeaponsMain.id("iron_scythe"), "scythe"));
         SHAPED_RECIPES.put("iron_spear",
-                new ShapedRecipeMaterial(Registries.ITEM.getId(Items.IRON_INGOT), Identifier.of("c", "poles"), null, "item", "tag", "", SpartanWeaponsMain.ID("iron_spear"), "spear"));
+                new ShapedRecipeMaterial(Registries.ITEM.getId(Items.IRON_INGOT), Identifier.of("c", "poles"), null, "item", "tag", "", SpartanWeaponsMain.id("iron_spear"), "spear"));
         SHAPED_RECIPES.put("iron_battle_axe", new ShapedRecipeMaterial(Registries.ITEM.getId(Items.IRON_INGOT), Identifier.of("c", "sticks"), Identifier.of("c", "poles"), "item", "tag", "tag",
-                SpartanWeaponsMain.ID("iron_battle_axe"), "battle_axe"));
+                SpartanWeaponsMain.id("iron_battle_axe"), "battle_axe"));
         SHAPED_RECIPES.put("iron_kunai", new ShapedRecipeMaterial(Registries.ITEM.getId(Items.IRON_INGOT), Identifier.of("c", "sticks"), Registries.ITEM.getId(Items.SLIME_BALL), "item", "tag",
-                "item", SpartanWeaponsMain.ID("iron_kunai"), "kunai"));
+                "item", SpartanWeaponsMain.id("iron_kunai"), "kunai"));
         SHAPED_RECIPES.put("iron_javelin", new ShapedRecipeMaterial(Registries.ITEM.getId(Items.IRON_INGOT), Identifier.of("c", "poles"), Registries.ITEM.getId(Items.SLIME_BALL), "item", "tag",
-                "item", SpartanWeaponsMain.ID("iron_javelin"), "javelin"));
+                "item", SpartanWeaponsMain.id("iron_javelin"), "javelin"));
 
         // Diamond
         SHAPED_RECIPES.put("diamond_cutlass",
-                new ShapedRecipeMaterial(Registries.ITEM.getId(Items.DIAMOND), Identifier.of("c", "sticks"), null, "item", "tag", "", SpartanWeaponsMain.ID("diamond_cutlass"), "cutlass"));
+                new ShapedRecipeMaterial(Registries.ITEM.getId(Items.DIAMOND), Identifier.of("c", "sticks"), null, "item", "tag", "", SpartanWeaponsMain.id("diamond_cutlass"), "cutlass"));
         SHAPED_RECIPES.put("diamond_dagger",
-                new ShapedRecipeMaterial(Registries.ITEM.getId(Items.DIAMOND), Identifier.of("c", "sticks"), null, "item", "tag", "", SpartanWeaponsMain.ID("diamond_dagger"), "dagger"));
+                new ShapedRecipeMaterial(Registries.ITEM.getId(Items.DIAMOND), Identifier.of("c", "sticks"), null, "item", "tag", "", SpartanWeaponsMain.id("diamond_dagger"), "dagger"));
         SHAPED_RECIPES.put("diamond_glaive",
-                new ShapedRecipeMaterial(Registries.ITEM.getId(Items.DIAMOND), Identifier.of("c", "poles"), null, "item", "tag", "", SpartanWeaponsMain.ID("diamond_glaive"), "glaive"));
+                new ShapedRecipeMaterial(Registries.ITEM.getId(Items.DIAMOND), Identifier.of("c", "poles"), null, "item", "tag", "", SpartanWeaponsMain.id("diamond_glaive"), "glaive"));
         SHAPED_RECIPES.put("diamond_greatsword",
-                new ShapedRecipeMaterial(Registries.ITEM.getId(Items.DIAMOND), Identifier.of("c", "sticks"), null, "item", "tag", "", SpartanWeaponsMain.ID("diamond_greatsword"), "greatsword"));
+                new ShapedRecipeMaterial(Registries.ITEM.getId(Items.DIAMOND), Identifier.of("c", "sticks"), null, "item", "tag", "", SpartanWeaponsMain.id("diamond_greatsword"), "greatsword"));
         SHAPED_RECIPES.put("diamond_halberd",
-                new ShapedRecipeMaterial(Registries.ITEM.getId(Items.DIAMOND), Identifier.of("c", "sticks"), null, "item", "tag", "", SpartanWeaponsMain.ID("diamond_halberd"), "halberd"));
+                new ShapedRecipeMaterial(Registries.ITEM.getId(Items.DIAMOND), Identifier.of("c", "sticks"), null, "item", "tag", "", SpartanWeaponsMain.id("diamond_halberd"), "halberd"));
         SHAPED_RECIPES.put("diamond_katana",
-                new ShapedRecipeMaterial(Registries.ITEM.getId(Items.DIAMOND), Identifier.of("c", "sticks"), null, "item", "tag", "", SpartanWeaponsMain.ID("diamond_katana"), "katana"));
+                new ShapedRecipeMaterial(Registries.ITEM.getId(Items.DIAMOND), Identifier.of("c", "sticks"), null, "item", "tag", "", SpartanWeaponsMain.id("diamond_katana"), "katana"));
         SHAPED_RECIPES.put("diamond_mace", new ShapedRecipeMaterial(Registries.ITEM.getId(Items.DIAMOND), Identifier.of("c", "sticks"), Registries.ITEM.getId(Items.DIAMOND_BLOCK), "item", "tag",
-                "item", SpartanWeaponsMain.ID("diamond_mace"), "mace"));
+                "item", SpartanWeaponsMain.id("diamond_mace"), "mace"));
         SHAPED_RECIPES.put("diamond_rapier",
-                new ShapedRecipeMaterial(Registries.ITEM.getId(Items.DIAMOND), Identifier.of("c", "sticks"), null, "item", "tag", "", SpartanWeaponsMain.ID("diamond_rapier"), "rapier"));
+                new ShapedRecipeMaterial(Registries.ITEM.getId(Items.DIAMOND), Identifier.of("c", "sticks"), null, "item", "tag", "", SpartanWeaponsMain.id("diamond_rapier"), "rapier"));
         SHAPED_RECIPES.put("diamond_scythe", new ShapedRecipeMaterial(Registries.ITEM.getId(Items.DIAMOND), Identifier.of("c", "sticks"), Identifier.of("c", "poles"), "item", "tag", "tag",
-                SpartanWeaponsMain.ID("diamond_scythe"), "scythe"));
+                SpartanWeaponsMain.id("diamond_scythe"), "scythe"));
         SHAPED_RECIPES.put("diamond_spear",
-                new ShapedRecipeMaterial(Registries.ITEM.getId(Items.DIAMOND), Identifier.of("c", "poles"), null, "item", "tag", "", SpartanWeaponsMain.ID("diamond_spear"), "spear"));
+                new ShapedRecipeMaterial(Registries.ITEM.getId(Items.DIAMOND), Identifier.of("c", "poles"), null, "item", "tag", "", SpartanWeaponsMain.id("diamond_spear"), "spear"));
         SHAPED_RECIPES.put("diamond_battle_axe", new ShapedRecipeMaterial(Registries.ITEM.getId(Items.DIAMOND), Identifier.of("c", "sticks"), Identifier.of("c", "poles"), "item", "tag", "tag",
-                SpartanWeaponsMain.ID("diamond_battle_axe"), "battle_axe"));
+                SpartanWeaponsMain.id("diamond_battle_axe"), "battle_axe"));
         SHAPED_RECIPES.put("diamond_kunai", new ShapedRecipeMaterial(Registries.ITEM.getId(Items.DIAMOND), Identifier.of("c", "sticks"), Registries.ITEM.getId(Items.SLIME_BALL), "item", "tag",
-                "item", SpartanWeaponsMain.ID("diamond_kunai"), "kunai"));
+                "item", SpartanWeaponsMain.id("diamond_kunai"), "kunai"));
         SHAPED_RECIPES.put("diamond_javelin", new ShapedRecipeMaterial(Registries.ITEM.getId(Items.DIAMOND), Identifier.of("c", "poles"), Registries.ITEM.getId(Items.SLIME_BALL), "item", "tag",
-                "item", SpartanWeaponsMain.ID("diamond_javelin"), "javelin"));
+                "item", SpartanWeaponsMain.id("diamond_javelin"), "javelin"));
 
         // Netherite
-        SMITHING_RECIPES.put("netherite_cutlass", new SmithingRecipeMaterial(SpartanWeaponsMain.ID("diamond_cutlass"), Registries.ITEM.getId(Items.NETHERITE_INGOT), "item", "item",
-                SpartanWeaponsMain.ID("netherite_cutlass"), Identifier.of("minecraft:netherite_upgrade_smithing_template")));
-        SMITHING_RECIPES.put("netherite_dagger", new SmithingRecipeMaterial(SpartanWeaponsMain.ID("diamond_dagger"), Registries.ITEM.getId(Items.NETHERITE_INGOT), "item", "item",
-                SpartanWeaponsMain.ID("netherite_dagger"), Identifier.of("minecraft:netherite_upgrade_smithing_template")));
-        SMITHING_RECIPES.put("netherite_glaive", new SmithingRecipeMaterial(SpartanWeaponsMain.ID("diamond_glaive"), Registries.ITEM.getId(Items.NETHERITE_INGOT), "item", "item",
-                SpartanWeaponsMain.ID("netherite_glaive"), Identifier.of("minecraft:netherite_upgrade_smithing_template")));
-        SMITHING_RECIPES.put("netherite_greatsword", new SmithingRecipeMaterial(SpartanWeaponsMain.ID("diamond_greatsword"), Registries.ITEM.getId(Items.NETHERITE_INGOT), "item", "item",
-                SpartanWeaponsMain.ID("netherite_greatsword"), Identifier.of("minecraft:netherite_upgrade_smithing_template")));
-        SMITHING_RECIPES.put("netherite_halberd", new SmithingRecipeMaterial(SpartanWeaponsMain.ID("diamond_halberd"), Registries.ITEM.getId(Items.NETHERITE_INGOT), "item", "item",
-                SpartanWeaponsMain.ID("netherite_halberd"), Identifier.of("minecraft:netherite_upgrade_smithing_template")));
-        SMITHING_RECIPES.put("netherite_katana", new SmithingRecipeMaterial(SpartanWeaponsMain.ID("diamond_katana"), Registries.ITEM.getId(Items.NETHERITE_INGOT), "item", "item",
-                SpartanWeaponsMain.ID("netherite_katana"), Identifier.of("minecraft:netherite_upgrade_smithing_template")));
-        SMITHING_RECIPES.put("netherite_mace", new SmithingRecipeMaterial(SpartanWeaponsMain.ID("diamond_mace"), Registries.ITEM.getId(Items.NETHERITE_INGOT), "item", "item",
-                SpartanWeaponsMain.ID("netherite_mace"), Identifier.of("minecraft:netherite_upgrade_smithing_template")));
-        SMITHING_RECIPES.put("netherite_rapier", new SmithingRecipeMaterial(SpartanWeaponsMain.ID("diamond_rapier"), Registries.ITEM.getId(Items.NETHERITE_INGOT), "item", "item",
-                SpartanWeaponsMain.ID("netherite_rapier"), Identifier.of("minecraft:netherite_upgrade_smithing_template")));
-        SMITHING_RECIPES.put("netherite_scythe", new SmithingRecipeMaterial(SpartanWeaponsMain.ID("diamond_scythe"), Registries.ITEM.getId(Items.NETHERITE_INGOT), "item", "item",
-                SpartanWeaponsMain.ID("netherite_scythe"), Identifier.of("minecraft:netherite_upgrade_smithing_template")));
-        SMITHING_RECIPES.put("netherite_spear", new SmithingRecipeMaterial(SpartanWeaponsMain.ID("diamond_spear"), Registries.ITEM.getId(Items.NETHERITE_INGOT), "item", "item",
-                SpartanWeaponsMain.ID("netherite_spear"), Identifier.of("minecraft:netherite_upgrade_smithing_template")));
-        SMITHING_RECIPES.put("netherite_battle_axe", new SmithingRecipeMaterial(SpartanWeaponsMain.ID("diamond_battle_axe"), Registries.ITEM.getId(Items.NETHERITE_INGOT), "item", "item",
-                SpartanWeaponsMain.ID("netherite_battle_axe"), Identifier.of("minecraft:netherite_upgrade_smithing_template")));
-        SMITHING_RECIPES.put("netherite_kunai", new SmithingRecipeMaterial(SpartanWeaponsMain.ID("diamond_kunai"), Registries.ITEM.getId(Items.NETHERITE_INGOT), "item", "item",
-                SpartanWeaponsMain.ID("netherite_kunai"), Identifier.of("minecraft:netherite_upgrade_smithing_template")));
-        SMITHING_RECIPES.put("netherite_javelin", new SmithingRecipeMaterial(SpartanWeaponsMain.ID("diamond_javelin"), Registries.ITEM.getId(Items.NETHERITE_INGOT), "item", "item",
-                SpartanWeaponsMain.ID("netherite_javelin"), Identifier.of("minecraft:netherite_upgrade_smithing_template")));
+        SMITHING_RECIPES.put("netherite_cutlass", new SmithingRecipeMaterial(SpartanWeaponsMain.id("diamond_cutlass"), Registries.ITEM.getId(Items.NETHERITE_INGOT), "item", "item",
+                SpartanWeaponsMain.id("netherite_cutlass"), Identifier.of("minecraft:netherite_upgrade_smithing_template")));
+        SMITHING_RECIPES.put("netherite_dagger", new SmithingRecipeMaterial(SpartanWeaponsMain.id("diamond_dagger"), Registries.ITEM.getId(Items.NETHERITE_INGOT), "item", "item",
+                SpartanWeaponsMain.id("netherite_dagger"), Identifier.of("minecraft:netherite_upgrade_smithing_template")));
+        SMITHING_RECIPES.put("netherite_glaive", new SmithingRecipeMaterial(SpartanWeaponsMain.id("diamond_glaive"), Registries.ITEM.getId(Items.NETHERITE_INGOT), "item", "item",
+                SpartanWeaponsMain.id("netherite_glaive"), Identifier.of("minecraft:netherite_upgrade_smithing_template")));
+        SMITHING_RECIPES.put("netherite_greatsword", new SmithingRecipeMaterial(SpartanWeaponsMain.id("diamond_greatsword"), Registries.ITEM.getId(Items.NETHERITE_INGOT), "item", "item",
+                SpartanWeaponsMain.id("netherite_greatsword"), Identifier.of("minecraft:netherite_upgrade_smithing_template")));
+        SMITHING_RECIPES.put("netherite_halberd", new SmithingRecipeMaterial(SpartanWeaponsMain.id("diamond_halberd"), Registries.ITEM.getId(Items.NETHERITE_INGOT), "item", "item",
+                SpartanWeaponsMain.id("netherite_halberd"), Identifier.of("minecraft:netherite_upgrade_smithing_template")));
+        SMITHING_RECIPES.put("netherite_katana", new SmithingRecipeMaterial(SpartanWeaponsMain.id("diamond_katana"), Registries.ITEM.getId(Items.NETHERITE_INGOT), "item", "item",
+                SpartanWeaponsMain.id("netherite_katana"), Identifier.of("minecraft:netherite_upgrade_smithing_template")));
+        SMITHING_RECIPES.put("netherite_mace", new SmithingRecipeMaterial(SpartanWeaponsMain.id("diamond_mace"), Registries.ITEM.getId(Items.NETHERITE_INGOT), "item", "item",
+                SpartanWeaponsMain.id("netherite_mace"), Identifier.of("minecraft:netherite_upgrade_smithing_template")));
+        SMITHING_RECIPES.put("netherite_rapier", new SmithingRecipeMaterial(SpartanWeaponsMain.id("diamond_rapier"), Registries.ITEM.getId(Items.NETHERITE_INGOT), "item", "item",
+                SpartanWeaponsMain.id("netherite_rapier"), Identifier.of("minecraft:netherite_upgrade_smithing_template")));
+        SMITHING_RECIPES.put("netherite_scythe", new SmithingRecipeMaterial(SpartanWeaponsMain.id("diamond_scythe"), Registries.ITEM.getId(Items.NETHERITE_INGOT), "item", "item",
+                SpartanWeaponsMain.id("netherite_scythe"), Identifier.of("minecraft:netherite_upgrade_smithing_template")));
+        SMITHING_RECIPES.put("netherite_spear", new SmithingRecipeMaterial(SpartanWeaponsMain.id("diamond_spear"), Registries.ITEM.getId(Items.NETHERITE_INGOT), "item", "item",
+                SpartanWeaponsMain.id("netherite_spear"), Identifier.of("minecraft:netherite_upgrade_smithing_template")));
+        SMITHING_RECIPES.put("netherite_battle_axe", new SmithingRecipeMaterial(SpartanWeaponsMain.id("diamond_battle_axe"), Registries.ITEM.getId(Items.NETHERITE_INGOT), "item", "item",
+                SpartanWeaponsMain.id("netherite_battle_axe"), Identifier.of("minecraft:netherite_upgrade_smithing_template")));
+        SMITHING_RECIPES.put("netherite_kunai", new SmithingRecipeMaterial(SpartanWeaponsMain.id("diamond_kunai"), Registries.ITEM.getId(Items.NETHERITE_INGOT), "item", "item",
+                SpartanWeaponsMain.id("netherite_kunai"), Identifier.of("minecraft:netherite_upgrade_smithing_template")));
+        SMITHING_RECIPES.put("netherite_javelin", new SmithingRecipeMaterial(SpartanWeaponsMain.id("diamond_javelin"), Registries.ITEM.getId(Items.NETHERITE_INGOT), "item", "item",
+                SpartanWeaponsMain.id("netherite_javelin"), Identifier.of("minecraft:netherite_upgrade_smithing_template")));
     }
 
     public static void init() {
@@ -235,12 +235,12 @@ public class RecipeInit {
 
         for (String key : SHAPED_RECIPES.keySet()) {
             ShapedRecipeMaterial material = SHAPED_RECIPES.get(key);
-            RECIPES.put(SpartanWeaponsMain.ID(key), RecipeGenerator.generateJson(material.headItem, material.handleItem, material.secondHandleItem, material.headType, material.handleType,
+            RECIPES.put(SpartanWeaponsMain.id(key), RecipeGenerator.generateJson(material.headItem, material.handleItem, material.secondHandleItem, material.headType, material.handleType,
                     material.secondHandleType, material.output, material.itemName));
         }
         for (String key : SMITHING_RECIPES.keySet()) {
             SmithingRecipeMaterial material = SMITHING_RECIPES.get(key);
-            RECIPES.put(SpartanWeaponsMain.ID(key),
+            RECIPES.put(SpartanWeaponsMain.id(key),
                     RecipeGenerator.generateSmithingJson(material.baseItem, material.additionItem, material.baseType, material.additionType, material.output, material.template));
         }
     }
