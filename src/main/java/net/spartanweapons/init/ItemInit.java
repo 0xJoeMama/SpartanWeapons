@@ -1,99 +1,100 @@
 package net.spartanweapons.init;
 
-import java.util.LinkedHashMap;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
+import net.minecraft.component.ComponentChanges;
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
-import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
-import net.spartanweapons.SpartanWeaponsMain;
 import net.spartanweapons.entity.JavelinEntity;
 import net.spartanweapons.item.*;
+import net.spartanweapons.util.WoodType;
 import org.jetbrains.annotations.NotNull;
 
 // TODO: Add netherite fireproofing to settings
 @SuppressWarnings("unused")
 public class ItemInit {
     public static final RegistryKey<ItemGroup> SPARTANWEAPONS_ITEM_GROUP = RegistryKey.of(RegistryKeys.ITEM_GROUP, Identifier.of("spartanweapons", "item_group"));
-    public static final Map<Identifier, Item> ITEMS = new LinkedHashMap<>();
+    public static final ItemInit INSTANCE = new ItemInit();
+    private final Map<Identifier, Item> items = new HashMap<>();
     // Sticks
-    public static final Item ACACIA_STICK = register("acacia_stick", new Item(new Item.Settings()));
-    public static final Item BAMBOO_STICK = register("bamboo_stick", new Item(new Item.Settings()));
-    public static final Item BIRCH_STICK = register("birch_stick", new Item(new Item.Settings()));
-    public static final Item CHERRY_STICK = register("cherry_stick", new Item(new Item.Settings()));
-    public static final Item CRIMSON_STICK = register("crimson_stick", new Item(new Item.Settings()));
-    public static final Item DARK_OAK_STICK = register("dark_oak_stick", new Item(new Item.Settings()));
-    public static final Item JUNGLE_STICK = register("jungle_stick", new Item(new Item.Settings()));
-    public static final Item MANGROVE_STICK = register("mangrove_stick", new Item(new Item.Settings()));
-    public static final Item SPRUCE_STICK = register("spruce_stick", new Item(new Item.Settings()));
-    public static final Item WARPED_STICK = register("warped_stick", new Item(new Item.Settings()));
+    public static final Item STICK = INSTANCE.register("stick", new Item(new Item.Settings()));
     // Poles
-    public static final Item POLE = register("pole", new SpartanWeaponItem(ToolMaterials.WOOD, new Item.Settings()));
+    public static final Item POLE = INSTANCE.register("pole", new SpartanWeaponItem(ToolMaterials.WOOD, new Item.Settings()));
     // Staff
-    public static final Item STAFF = register("staff", new SpartanWeaponItem(
+    public static final Item STAFF = INSTANCE.register("staff", new SpartanWeaponItem(
             ToolMaterials.WOOD,
-            new Item.Settings().attributeModifiers(SwordItem.createAttributeModifiers(ToolMaterials.WOOD, 5, -2.9f))
+            new Item.Settings().attributeModifiers(SwordItem.createAttributeModifiers(ToolMaterials.WOOD, 5, -2.9f)),
+            true
     ));
+    private static final ToolMaterial[] METALS = new ToolMaterial[]{
+            ToolMaterials.DIAMOND,
+            ToolMaterials.GOLD,
+            ToolMaterials.IRON,
+            ToolMaterials.NETHERITE
+    };
     // Weapons
-    public static final Item CLUB = register("club", new SpartanWeaponItem(
+    public static final Item CLUB = INSTANCE.register("club", new SpartanWeaponItem(
             ToolMaterials.WOOD,
             new Item.Settings()
                     .attributeModifiers(SwordItem.createAttributeModifiers(ToolMaterials.WOOD, 5, -2.9f)))
     );
-    public static final MaterialItemContainer<SpartanWeaponItem> CUTLASSES = new MaterialItemContainer<>("cutlass",
+    public static final MaterialItemContainer<SpartanWeaponItem> CUTLASSES = new MaterialItemContainer<>(INSTANCE, "cutlass",
             createWeaponSettings(5, -2.8f),
             SpartanWeaponItem::new
     );
-    public static final MaterialItemContainer<SpartanWeaponItem> DAGGERS = new MaterialItemContainer<>("dagger",
+    public static final MaterialItemContainer<SpartanWeaponItem> DAGGERS = new MaterialItemContainer<>(INSTANCE, "dagger",
             createWeaponSettings(0, -1.6f),
             SpartanWeaponItem::new
     );
-    public static final MaterialItemContainer<SpartanWeaponItem> GLAIVES = new MaterialItemContainer<>("glaive",
+    public static final MaterialItemContainer<SpartanWeaponItem> GLAIVES = new MaterialItemContainer<>(INSTANCE, "glaive",
             createWeaponSettings(4, -2.6f),
             SpartanWeaponItem::new
     );
-    public static final MaterialItemContainer<SpartanWeaponItem> GREATSWORDS = new MaterialItemContainer<>("greatsword",
+    public static final MaterialItemContainer<SpartanWeaponItem> GREATSWORDS = new MaterialItemContainer<>(INSTANCE, "greatsword",
             createWeaponSettings(7, -3.2f),
             SpartanWeaponItem::new
     );
-    public static final MaterialItemContainer<SpartanWeaponItem> HALBERD = new MaterialItemContainer<>("halberd",
+    public static final MaterialItemContainer<SpartanWeaponItem> HALBERD = new MaterialItemContainer<>(INSTANCE, "halberd",
             createWeaponSettings(6, -3),
             SpartanWeaponItem::new
     );
-    public static final MaterialItemContainer<SpartanWeaponItem> KATANAS = new MaterialItemContainer<>("katana",
+    public static final MaterialItemContainer<SpartanWeaponItem> KATANAS = new MaterialItemContainer<>(INSTANCE, "katana",
             createWeaponSettings(6, -2.3f),
             SpartanWeaponItem::new
     );
-    public static final MaterialItemContainer<SpartanWeaponItem> MACES = new MaterialItemContainer<>("mace",
+    public static final MaterialItemContainer<SpartanWeaponItem> MACES = new MaterialItemContainer<>(INSTANCE, "mace",
             createWeaponSettings(9, -3.2f),
             SpartanWeaponItem::new
     );
-    public static final MaterialItemContainer<SpartanWeaponItem> RAPIERS = new MaterialItemContainer<>("rapier",
+    public static final MaterialItemContainer<SpartanWeaponItem> RAPIERS = new MaterialItemContainer<>(INSTANCE, "rapier",
             createWeaponSettings(1, -2),
-            SpartanWeaponItem::new
+            (material, settings) -> new SpartanWeaponItem(material, settings, true),
+            METALS
     );
-    public static final MaterialItemContainer<SpartanWeaponItem> SCYTHES = new MaterialItemContainer<>("scythe",
+    public static final MaterialItemContainer<SpartanWeaponItem> SCYTHES = new MaterialItemContainer<>(INSTANCE, "scythe",
             createWeaponSettings(6, -3),
-            SpartanWeaponItem::new
+            (material, settings) -> new SpartanWeaponItem(material, settings, true),
+            METALS
     );
-    public static final MaterialItemContainer<SpartanWeaponItem> SPEARS = new MaterialItemContainer<>("spear",
+    public static final MaterialItemContainer<SpartanWeaponItem> SPEARS = new MaterialItemContainer<>(INSTANCE, "spear",
             createWeaponSettings(5, -2.8f),
             SpartanWeaponItem::new
     );
-    public static final MaterialItemContainer<SpartanWeaponItem> AXES = new MaterialItemContainer<>("axe",
+    public static final MaterialItemContainer<SpartanWeaponItem> AXES = new MaterialItemContainer<>(INSTANCE, "axe",
             createWeaponSettings(4, -2.5f),
             SpartanWeaponItem::new
     );
-    public static final MaterialItemContainer<SpartanWeaponItem> JAVELIN = new MaterialItemContainer<>("javelin",
+    public static final MaterialItemContainer<SpartanWeaponItem> JAVELIN = new MaterialItemContainer<>(INSTANCE, "javelin",
             createWeaponSettings(2, -2.4f),
             (material, settings) -> {
                 Supplier<EntityType<JavelinEntity>> type = () -> switch (material) {
@@ -108,35 +109,55 @@ public class ItemInit {
             },
             ToolMaterials.NETHERITE, ToolMaterials.DIAMOND, ToolMaterials.GOLD, ToolMaterials.IRON
     );
-    public static final MaterialItemContainer<SpartanWeaponItem> KUNAI = new MaterialItemContainer<>("kunai",
+    public static final MaterialItemContainer<SpartanWeaponItem> KUNAI = new MaterialItemContainer<>(INSTANCE, "kunai",
             createWeaponSettings(0, -1.8f),
             SpartanWeaponItem::new
     );
 
-    public static <I extends Item> I register(String name, I item) {
-        ITEMS.put(Identifier.of("spartanweapons", name), item);
+    public <I extends Item> I register(String name, I item) {
+        items.put(Identifier.of("spartanweapons", name), item);
         return item;
     }
 
-    public static @NotNull Function<ToolMaterial, Item.Settings> createWeaponSettings(int baseAtkDamage, float atkSpeed) {
+    private static @NotNull Function<ToolMaterial, Item.Settings> createWeaponSettings(int baseAtkDamage, float atkSpeed) {
         var settings = new Item.Settings()
                 .attributeModifiers(SwordItem.createAttributeModifiers(ToolMaterials.WOOD, baseAtkDamage, atkSpeed));
         return material -> material == ToolMaterials.NETHERITE ? settings.fireproof() : settings;
     }
 
-    public static void init() {
-        for (var id : ITEMS.keySet()) {
-            Registry.register(Registries.ITEM, id, ITEMS.get(id));
+    public void register() {
+        for (var id : this.items.keySet()) {
+            Registry.register(Registries.ITEM, id, items.get(id));
         }
 
         Registry.register(Registries.ITEM_GROUP, SPARTANWEAPONS_ITEM_GROUP, FabricItemGroup.builder()
                 .icon(() -> new ItemStack(CUTLASSES.getUnsafe(ToolMaterials.DIAMOND)))
                 .displayName(Text.translatable("item.spartanweapons.item_group"))
-                .entries((displayContext, entries) -> Registries.ITEM.streamEntries()
-                        .filter(ref -> ref.getKey().filter(key -> key.getValue().getNamespace().equals(SpartanWeaponsMain.MODID)).isPresent())
-                        .map(RegistryEntry.Reference::value)
-                        .forEach(entries::add))
+                .entries((displayContext, entries) -> this.items.forEach((identifier, item) -> {
+                    if (item instanceof SpartanWeaponItem spartanWeaponItem && spartanWeaponItem.hasHandle()) {
+                        WoodType.REGISTRY.stream().map(woodType -> ComponentChanges.builder().add(WoodType.WOOD_TYPE_COMPONENT, woodType).build()).map(changes -> {
+                            var stack = new ItemStack(item);
+                            stack.applyChanges(changes);
+                            return stack;
+                        }).forEach(entries::add);
+                    } else {
+                        entries.add(item);
+                    }
+                }))
                 .build()
         );
+    }
+
+    public Item getItem(Identifier id) {
+        return this.items.get(id);
+    }
+
+    @SuppressWarnings("OptionalGetWithoutIsPresent")
+    public Identifier getId(Item item) {
+        return this.items.entrySet().stream().filter(identifierItemEntry -> identifierItemEntry.getValue() == item).findAny().get().getKey();
+    }
+
+    public Map<Identifier, Item> getItems() {
+        return this.items;
     }
 }

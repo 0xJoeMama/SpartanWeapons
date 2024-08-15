@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "spartanweapons:item/scythe/diamond_scythe",
+    "layer1": "spartanweapons:item/scythe/alt_wood/spruce"
+  }
+}

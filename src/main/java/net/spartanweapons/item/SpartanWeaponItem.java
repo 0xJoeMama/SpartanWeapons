@@ -6,13 +6,30 @@ import net.minecraft.item.SwordItem;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.text.Text;
+import net.minecraft.util.Identifier;
 import net.spartanweapons.util.WoodType;
 
 import java.util.List;
 
 public class SpartanWeaponItem extends SwordItem {
-    public SpartanWeaponItem(ToolMaterial toolMaterial, Settings settings) {
+    private final boolean hasHandle;
+
+    public SpartanWeaponItem(ToolMaterial toolMaterial, Settings settings, boolean hasHandle) {
         super(toolMaterial, settings);
+        this.hasHandle = hasHandle;
+    }
+
+    public SpartanWeaponItem(ToolMaterial material, Settings settings) {
+        this(material, settings, false);
+    }
+
+    public boolean hasHandle() {
+        return this.hasHandle;
+    }
+
+    public static String getItemName(Identifier id) {
+        var parts = id.getPath().split("_");
+        return parts[parts.length - 1];
     }
 
     @Override

@@ -16,7 +16,7 @@ public class SpartanWeaponsMain implements ModInitializer {
     public void onInitialize() {
         ConfigInit.init();
         WoodType.init();
-        ItemInit.init();
+        ItemInit.INSTANCE.register();
         EntityInit.init();
         RecipeInit.init();
         TagInit.init();

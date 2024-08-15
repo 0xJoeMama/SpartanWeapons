@@ -3,9 +3,7 @@ package net.spartanweapons.item;
 import net.minecraft.item.Item;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.item.ToolMaterials;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
-import net.spartanweapons.SpartanWeaponsMain;
+import net.spartanweapons.init.ItemInit;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.HashMap;
@@ -18,14 +16,18 @@ import java.util.function.Function;
 public class MaterialItemContainer<T extends Item> {
     private final Map<ToolMaterial, T> items = new HashMap<>();
 
-    public MaterialItemContainer(String name, Function<ToolMaterial, Item.Settings> props, BiFunction<ToolMaterial, Item.Settings, T> factory, ToolMaterial... materials) {
+    public MaterialItemContainer(ItemInit registrar, String name, Function<ToolMaterial, Item.Settings> props, BiFunction<ToolMaterial, Item.Settings, T> factory, ToolMaterial... materials) {
         if (materials.length == 0) materials = ToolMaterials.values();
 
         for (var material : materials) {
             var item = factory.apply(material, props.apply(material));
-            Registry.register(Registries.ITEM, SpartanWeaponsMain.id(material.toString().toLowerCase() + "_" + name), item);
+            registrar.register(material.toString().toLowerCase() + "_" + name, item);
             this.items.put(material, item);
         }
+    }
+
+    public void emitDatagen() {
+
     }
 
     @NotNull

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "spartanweapons:item/rapier/gold_rapier",
+    "layer1": "spartanweapons:item/rapier/alt_wood/mangrove"
+  }
+}

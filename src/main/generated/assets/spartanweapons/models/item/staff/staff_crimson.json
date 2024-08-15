@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "spartanweapons:item/staff/staff",
+    "layer1": "spartanweapons:item/staff/alt_wood/crimson"
+  }
+}

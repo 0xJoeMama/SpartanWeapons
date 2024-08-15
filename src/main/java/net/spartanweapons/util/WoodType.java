@@ -11,7 +11,8 @@ import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.spartanweapons.SpartanWeaponsMain;
 
-public record WoodType() {
+@SuppressWarnings("InstantiationOfUtilityClass")
+public class WoodType {
     public static final Registry<WoodType> REGISTRY = FabricRegistryBuilder
             .<WoodType>createSimple(RegistryKey.ofRegistry(SpartanWeaponsMain.id("wood_type")))
             .attribute(RegistryAttribute.MODDED)
@@ -43,7 +44,6 @@ public record WoodType() {
             ComponentType.<WoodType>builder()
                     .codec(REGISTRY.getCodec())
                     .packetCodec(PACKET_CODEC)
-                    .cache()
                     .build()
     );
 }
