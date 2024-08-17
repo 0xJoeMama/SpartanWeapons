@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "spartanweapons:item/sticks/warped_stick"
+    "layer0": "spartanweapons:item/stick/warped_stick"
   }
 }

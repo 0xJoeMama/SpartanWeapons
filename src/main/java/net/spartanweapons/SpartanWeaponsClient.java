@@ -7,6 +7,8 @@ import net.fabricmc.fabric.api.client.model.loading.v1.ModelLoadingPlugin;
 import net.fabricmc.fabric.api.client.rendering.v1.BuiltinItemRendererRegistry;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.render.RenderLayer;
+import net.minecraft.client.render.model.json.ModelTransformationMode;
+import net.minecraft.client.util.ModelIdentifier;
 import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.random.Random;
@@ -61,6 +63,12 @@ public class SpartanWeaponsClient implements ClientModInitializer {
                     var id = entry.getKey();
                     var itemName = SpartanWeaponItem.getItemName(id);
 
+                    matrices.push();
+                    // steal the transformations from handheld
+                    var handHeld = MinecraftClient.getInstance().getBakedModelManager().getModel(ModelIdentifier.ofInventoryVariant(Identifier.of("diamond_sword")));
+                    if (handHeld != null) handHeld.getTransformation().getTransformation(mode).apply(mode != ModelTransformationMode.FIRST_PERSON_LEFT_HAND, matrices);
+                    if (mode != ModelTransformationMode.GUI)  matrices.translate(0.5, 0.5, 0.5);
+
                     var type = stack.get(WoodType.WOOD_TYPE_COMPONENT);
                     if (type == null) type = WoodType.OAK;
 
@@ -74,6 +82,7 @@ public class SpartanWeaponsClient implements ClientModInitializer {
                     var matrix = matrices.peek();
 
                     for (var quad : quads) buf.quad(matrix, quad, 1, 1, 1, 1, light, overlay);
+                    matrices.pop();
                 }));
         ModelInit.init();
         RenderInit.init();

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "spartanweapons:item/mace/diamond_mace",
+    "layer1": "spartanweapons:item/mace/alt_wood/oak"
+  }
+}

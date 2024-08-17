@@ -26,7 +26,7 @@ public class ItemModelProvider extends FabricModelProvider {
     public void generateItemModels(ItemModelGenerator gen) {
         for (var type : WoodType.REGISTRY.getKeys()) {
             var stickId = Identifier.of(SpartanWeaponsMain.MODID, "item/stick/stick_" + type.getValue().getPath());
-            Models.GENERATED.upload(stickId, TextureMap.layer0(Identifier.of(SpartanWeaponsMain.MODID, "item/sticks/" + type.getValue().getPath() + "_stick")), gen.writer);
+            Models.GENERATED.upload(stickId, TextureMap.layer0(Identifier.of(SpartanWeaponsMain.MODID, "item/stick/" + type.getValue().getPath() + "_stick")), gen.writer);
         }
         gen.register(ItemInit.STICK, BUILTIN);
 

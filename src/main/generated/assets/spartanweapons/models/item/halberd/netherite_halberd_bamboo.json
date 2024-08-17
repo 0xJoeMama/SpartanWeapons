@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "spartanweapons:item/halberd/netherite_halberd",
+    "layer1": "spartanweapons:item/halberd/alt_wood/bamboo"
+  }
+}

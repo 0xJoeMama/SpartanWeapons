@@ -1,6 +1,3 @@
 {
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "spartanweapons:item/glaive/iron_glaive"
-  }
+  "parent": "minecraft:builtin/entity"
 }

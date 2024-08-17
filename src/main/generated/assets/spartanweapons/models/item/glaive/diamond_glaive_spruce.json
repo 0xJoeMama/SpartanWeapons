@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "spartanweapons:item/glaive/diamond_glaive",
+    "layer1": "spartanweapons:item/glaive/alt_wood/spruce"
+  }
+}

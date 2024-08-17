@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "spartanweapons:item/sticks/dark_oak_stick"
+    "layer0": "spartanweapons:item/stick/dark_oak_stick"
   }
 }

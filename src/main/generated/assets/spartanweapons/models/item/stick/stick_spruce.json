@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "spartanweapons:item/sticks/spruce_stick"
+    "layer0": "spartanweapons:item/stick/spruce_stick"
   }
 }

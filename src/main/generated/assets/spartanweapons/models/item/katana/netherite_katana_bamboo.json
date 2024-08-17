@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "spartanweapons:item/katana/netherite_katana",
+    "layer1": "spartanweapons:item/katana/alt_wood/bamboo"
+  }
+}

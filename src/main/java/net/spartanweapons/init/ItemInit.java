@@ -1,5 +1,7 @@
 package net.spartanweapons.init;
 
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
@@ -50,31 +52,39 @@ public class ItemInit {
     );
     public static final MaterialItemContainer<SpartanWeaponItem> CUTLASSES = new MaterialItemContainer<>(INSTANCE, "cutlass",
             createWeaponSettings(5, -2.8f),
-            SpartanWeaponItem::new
+            (material, settings) -> new SpartanWeaponItem(material, settings, true),
+            METALS
     );
     public static final MaterialItemContainer<SpartanWeaponItem> DAGGERS = new MaterialItemContainer<>(INSTANCE, "dagger",
             createWeaponSettings(0, -1.6f),
-            SpartanWeaponItem::new
+            (material, settings) -> new SpartanWeaponItem(material, settings, true),
+            METALS
     );
     public static final MaterialItemContainer<SpartanWeaponItem> GLAIVES = new MaterialItemContainer<>(INSTANCE, "glaive",
             createWeaponSettings(4, -2.6f),
-            SpartanWeaponItem::new
+            (material, settings) -> new SpartanWeaponItem(material, settings, true),
+            METALS
     );
     public static final MaterialItemContainer<SpartanWeaponItem> GREATSWORDS = new MaterialItemContainer<>(INSTANCE, "greatsword",
             createWeaponSettings(7, -3.2f),
-            SpartanWeaponItem::new
+            (material, settings) -> new SpartanWeaponItem(material, settings, true),
+            METALS
+
     );
     public static final MaterialItemContainer<SpartanWeaponItem> HALBERD = new MaterialItemContainer<>(INSTANCE, "halberd",
             createWeaponSettings(6, -3),
-            SpartanWeaponItem::new
+            (material, settings) -> new SpartanWeaponItem(material, settings, true),
+            METALS
     );
     public static final MaterialItemContainer<SpartanWeaponItem> KATANAS = new MaterialItemContainer<>(INSTANCE, "katana",
             createWeaponSettings(6, -2.3f),
-            SpartanWeaponItem::new
+            (material, settings) -> new SpartanWeaponItem(material, settings, true),
+            METALS
     );
     public static final MaterialItemContainer<SpartanWeaponItem> MACES = new MaterialItemContainer<>(INSTANCE, "mace",
             createWeaponSettings(9, -3.2f),
-            SpartanWeaponItem::new
+            (material, settings) -> new SpartanWeaponItem(material, settings, true),
+            METALS
     );
     public static final MaterialItemContainer<SpartanWeaponItem> RAPIERS = new MaterialItemContainer<>(INSTANCE, "rapier",
             createWeaponSettings(1, -2),
@@ -92,7 +102,8 @@ public class ItemInit {
     );
     public static final MaterialItemContainer<SpartanWeaponItem> AXES = new MaterialItemContainer<>(INSTANCE, "axe",
             createWeaponSettings(4, -2.5f),
-            SpartanWeaponItem::new
+            (material, settings) -> new SpartanWeaponItem(material, settings, true),
+            METALS
     );
     public static final MaterialItemContainer<SpartanWeaponItem> JAVELIN = new MaterialItemContainer<>(INSTANCE, "javelin",
             createWeaponSettings(2, -2.4f),
@@ -133,13 +144,13 @@ public class ItemInit {
         Registry.register(Registries.ITEM_GROUP, SPARTANWEAPONS_ITEM_GROUP, FabricItemGroup.builder()
                 .icon(() -> new ItemStack(CUTLASSES.getUnsafe(ToolMaterials.DIAMOND)))
                 .displayName(Text.translatable("item.spartanweapons.item_group"))
-                .entries((displayContext, entries) -> this.items.forEach((identifier, item) -> {
+                .entries((displayContext, entries) -> this.items.values().stream().sorted(Comparator.comparing(item -> item.getName().getString())).forEach(item -> {
                     if (item instanceof SpartanWeaponItem spartanWeaponItem && spartanWeaponItem.hasHandle()) {
                         WoodType.REGISTRY.stream().map(woodType -> ComponentChanges.builder().add(WoodType.WOOD_TYPE_COMPONENT, woodType).build()).map(changes -> {
                             var stack = new ItemStack(item);
                             stack.applyChanges(changes);
                             return stack;
-                        }).forEach(entries::add);
+                        }).sorted(Comparator.comparing(o -> o.getName().getString())).forEach(entries::add);
                     } else {
                         entries.add(item);
                     }

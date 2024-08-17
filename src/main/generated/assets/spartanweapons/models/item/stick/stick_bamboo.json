@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "spartanweapons:item/sticks/bamboo_stick"
+    "layer0": "spartanweapons:item/stick/bamboo_stick"
   }
 }

@@ -1,6 +1,3 @@
 {
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "spartanweapons:item/axe/netherite_axe"
-  }
+  "parent": "minecraft:builtin/entity"
 }

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "spartanweapons:item/greatsword/gold_greatsword",
+    "layer1": "spartanweapons:item/greatsword/alt_wood/dark_oak"
+  }
+}

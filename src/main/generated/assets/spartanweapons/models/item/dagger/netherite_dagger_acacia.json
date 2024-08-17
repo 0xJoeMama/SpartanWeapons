@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "spartanweapons:item/dagger/netherite_dagger",
+    "layer1": "spartanweapons:item/dagger/alt_wood/acacia"
+  }
+}
